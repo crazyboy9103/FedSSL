@@ -1,0 +1,94 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_214112-20220810_214108
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_214108
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220810_214108
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+Client 6 Linear evaluating FL model
+Client 0 Linear evaluating FL model
+Client 9 Linear evaluating FL model
+Client 3 Linear evaluating FL model
+Client 1 Linear evaluating FL model
+Client 2 Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 13.34%
+                          test acc/top5 : 49.96%
+                          test loss : 2.30
+                          train loss : 2.15 
+                          time taken : 147.20 
+Client 6 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.07%
+                          test acc/top5 : 50.34%
+                          test loss : 2.31
+                          train loss : 1.93 
+                          time taken : 153.86 
+Client 9 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 16.82%
+                          test acc/top5 : 50.98%
+                          test loss : 2.28
+                          train loss : 1.85 
+                          time taken : 142.71 
+Client 4 Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.33%
+                          test acc/top5 : 59.04%
+                          test loss : 2.27
+                          train loss : 2.03 
+                          time taken : 143.25 
+Client 8 Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 14.35%
+                          test acc/top5 : 50.44%
+                          test loss : 2.30
+                          train loss : 2.05 
+                          time taken : 144.16 
+Client 7 Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 16.58%
+                          test acc/top5 : 57.68%
+                          test loss : 2.28
+                          train loss : 2.14 
+                          time taken : 146.26 
+Client 5 Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 12.74%
+                          test acc/top5 : 55.63%
+                          test loss : 2.31
+                          train loss : 1.86 
+                          time taken : 145.37 
+Client 8 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.39%
+                          test acc/top5 : 52.81%
+                          test loss : 2.30
+                          train loss : 2.06 
+                          time taken : 146.63 
+Client 7 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 15.96%
+                          test acc/top5 : 51.33%
+                          test loss : 2.30
+                          train loss : 1.93 
+                          time taken : 146.90 
+Client 5 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 16.40%
+                          test acc/top5 : 55.83%
+                          test loss : 2.29
+                          train loss : 1.93 
+                          time taken : 149.68 
+Client 0 Linear evaluating FL model
+Client 6 Linear evaluating FL model

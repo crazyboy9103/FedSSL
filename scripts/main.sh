@@ -7,7 +7,7 @@
 #SBATCH --mem=64000MB
 #SBATCH --partition=3090,titan
 #SBATCH --cpus-per-task=64
-#SBATCH --output=/home/kwangyeongill/FedSSL_clean/scripts/slurm/R-%x.%j.out
+#SBATCH --output=/home/kwangyeongill/FedSSL_clean/scripts/slurm/jobname_%x_jobid_%j.out
 
 eval "$(conda shell.bash hook)"
 conda activate FedSSL
