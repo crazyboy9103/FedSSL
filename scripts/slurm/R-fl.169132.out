@@ -1,0 +1,102 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_204901-20220810_204856
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_204856
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220810_204856
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+cuda:0
+cuda:1
+cuda:0
+cuda:1
+cuda:0
+cuda:1
+cuda:0
+cuda:1
+cuda:0
+cuda:1
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_205036-27hmn6tw
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_204856
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/27hmn6tw
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_205036-21nzkqyo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_204856
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/21nzkqyo
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_205057-3t4pn4ef
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_204856
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/3t4pn4ef
+Process Process-8:
+Traceback (most recent call last):
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/kwangyeongill/FedSSL_clean/trainers.py", line 80, in train
+    for batch_idx, (images, labels) in enumerate(self.train_loader):
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 368, in __iter__
+    return self._get_iterator()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 314, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 927, in __init__
+    w.start()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/popen_spawn_posix.py", line 58, in _launch
+    self.pid = util.spawnv_passfds(spawn.get_executable(),
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/util.py", line 452, in spawnv_passfds
+    return _posixsubprocess.fork_exec(
+OSError: [Errno 12] Cannot allocate memory
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_205331-2ol47v15
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_204856
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/2ol47v15
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_205348-3i1cczpp
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_204856
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/3i1cczpp
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_205411-nesjgsbg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_204856
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/nesjgsbg
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_205537-r8rp4vq5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_204856
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/r8rp4vq5
+slurmstepd: error: *** JOB 169132 ON b02 CANCELLED AT 2022-08-10T20:55:45 ***
+slurmstepd: error: Detected 17 oom-kill event(s) in StepId=169132.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

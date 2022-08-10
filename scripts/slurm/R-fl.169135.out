@@ -1,0 +1,9 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_205537-20220810_205534
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205534
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220810_205534
+slurmstepd: error: *** JOB 169135 ON b01 CANCELLED AT 2022-08-10T20:56:50 ***
+slurmstepd: error: *** JOB 169135 STEPD TERMINATED ON b01 AT 2022-08-10T20:57:50 DUE TO JOB NOT ENDING WITH SIGNALS ***

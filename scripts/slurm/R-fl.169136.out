@@ -1,0 +1,866 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_205856-20220810_205852
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220810_205852
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210006-2p65wp36
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/2p65wp36
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210006-2ytnl5of
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/2ytnl5of
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210011-8eksxjoh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/8eksxjoh
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210019-itp45511
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/itp45511
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210029-2dn92fsz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/2dn92fsz
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210037-3fvmbphc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/3fvmbphc
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210046-fkmgvse9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/fkmgvse9
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210048-m1wcfoaa
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/m1wcfoaa
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210059-2bs1t3xf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/2bs1t3xf
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210107-hffvbv7p
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/hffvbv7p
+Client 6 Linear evaluating FL model
+Client 0 Linear evaluating FL model
+Client 9 Linear evaluating FL model
+Client 3 Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 49.98%
+                          test loss : 2.33
+                          train loss : 2.17 
+                          time taken : 153.43 
+Client 6 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.00%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 159.79 
+Client 1 Linear evaluating FL model
+Client 9 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 50.14%
+                          test loss : 2.36
+                          train loss : 1.85 
+                          time taken : 151.78 
+Client 2 Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 50.02%
+                          test loss : 2.36
+                          train loss : 2.03 
+                          time taken : 150.59 
+Client 4 Linear evaluating FL model
+Client 8 Linear evaluating FL model
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 49.99%
+                          test loss : 2.36
+                          train loss : 2.05 
+                          time taken : 158.31 
+Client 7 Linear evaluating FL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.01%
+                          test acc/top5 : 50.01%
+                          test loss : 2.36
+                          train loss : 2.14 
+                          time taken : 160.30 
+Client 5 Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.00%
+                          test acc/top5 : 49.98%
+                          test loss : 2.36
+                          train loss : 1.86 
+                          time taken : 164.13 
+Client 8 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.88%
+                          test loss : 2.34
+                          train loss : 2.07 
+                          time taken : 156.85 
+Client 7 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.02%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 159.18 
+Client 5 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 49.99%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 161.98 
+Client 0 Linear evaluating FL model
+Client 6 Linear evaluating FL model
+Client 9 Linear evaluating FL model
+Client 3 Linear evaluating FL model
+Client 1 Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.44%
+                          test acc/top5 : 49.98%
+                          test loss : 2.34
+                          train loss : 1.98 
+                          time taken : 147.97 
+Training complete best top1/top5: 10.44%/49.98%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 6 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.00%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 148.83 
+Training complete best top1/top5: 9.98%/50.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 2 Linear evaluating FL model
+Client 9 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 50.74%
+                          test loss : 2.36
+                          train loss : 1.85 
+                          time taken : 148.79 
+Training complete best top1/top5: 9.99%/50.74%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 50.02%
+                          test loss : 2.36
+                          train loss : 2.03 
+                          time taken : 148.41 
+Training complete best top1/top5: 9.99%/50.02%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 8 Linear evaluating FL model
+Client 4 Linear evaluating FL model
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 49.99%
+                          test loss : 2.36
+                          train loss : 2.05 
+                          time taken : 144.96 
+Training complete best top1/top5: 9.99%/49.99%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 7 Linear evaluating FL model
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.01%
+                          test acc/top5 : 50.01%
+                          test loss : 2.36
+                          train loss : 2.14 
+                          time taken : 141.33 
+Training complete best top1/top5: 10.01%/50.01%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 5 Linear evaluating FL model
+Client 8 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 14.39%
+                          test acc/top5 : 49.31%
+                          test loss : 2.31
+                          train loss : 1.94 
+                          time taken : 141.83 
+Training complete best top1/top5: 14.39%/49.31%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.00%
+                          test acc/top5 : 49.98%
+                          test loss : 2.36
+                          train loss : 1.86 
+                          time taken : 142.52 
+Training complete best top1/top5: 10.00%/49.98%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 7 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.02%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 142.03 
+Training complete best top1/top5: 9.98%/50.02%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 5 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 49.99%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 140.76 
+Training complete best top1/top5: 9.98%/49.99%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+0 summary
+1 summary
+2 summary
+3 summary
+4 summary
+5 summary
+6 summary
+7 summary
+8 summary
+9 summary
+10
+Client -1 Linear evaluating FL model
+#######################################################
+ 
+Avg Validation Stats after 1 global rounds
+Validation Loss     : 2.36
+Validation Accuracy : top1/top5 9.98%/50.37%
+
+#######################################################
+
+ | Global Training Round : 2 |
+
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210623-1oaql53w
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/1oaql53w
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210629-1kvugp51
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/1kvugp51
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210636-1b25arbo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/1b25arbo
+[W CudaIPCTypes.cpp:92] Producer process tried to deallocate over 1000 memory blocks referred by consumer processes. Deallocation might be significantly slowed down. We assume it will never going to be the case, but if it is, please file but to https://github.com/pytorch/pytorch
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210643-3bw9k17d
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/3bw9k17d
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210651-2myxau1k
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/2myxau1k
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210658-31vu1zvn
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/31vu1zvn
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210706-29rdencl
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/29rdencl
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210714-9cz6t0zd
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/9cz6t0zd
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210722-24693wdo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/24693wdo
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_210730-1rviihn9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/1rviihn9
+Client 3 Linear evaluating FL model
+Client 0 Linear evaluating FL model
+Client 8 Linear evaluating FL model
+Client 5 Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 49.99%
+                          test loss : 2.36
+                          train loss : 2.03 
+                          time taken : 145.16 
+Client 4 Linear evaluating FL model
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 49.96%
+                          test loss : 2.34
+                          train loss : 2.09 
+                          time taken : 145.25 
+Client 6 Linear evaluating FL model
+Client 8 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 48.88%
+                          test loss : 2.36
+                          train loss : 2.00 
+                          time taken : 145.72 
+Client 5 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 49.97%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 149.76 
+Client 7 Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.00%
+                          test acc/top5 : 50.03%
+                          test loss : 2.36
+                          train loss : 1.86 
+                          time taken : 151.66 
+Client 2 Linear evaluating FL model
+Client 1 Linear evaluating FL model
+Client 6 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.01%
+                          test loss : 2.34
+                          train loss : 2.29 
+                          time taken : 152.62 
+Client 9 Linear evaluating FL model
+Client 7 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.01%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 153.41 
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.36%
+                          test acc/top5 : 50.01%
+                          test loss : 2.32
+                          train loss : 2.12 
+                          time taken : 155.28 
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 13.59%
+                          test acc/top5 : 50.23%
+                          test loss : 2.31
+                          train loss : 2.01 
+                          time taken : 154.92 
+Client 9 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 49.97%
+                          test loss : 2.36
+                          train loss : 1.85 
+                          time taken : 155.39 
+Client 3 Linear evaluating FL model
+Client 0 Linear evaluating FL model
+Client 8 Linear evaluating FL model
+Client 5 Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 49.99%
+                          test loss : 2.36
+                          train loss : 2.03 
+                          time taken : 149.25 
+Training complete best top1/top5: 9.99%/49.99%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 4 Linear evaluating FL model
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 12.25%
+                          test acc/top5 : 50.45%
+                          test loss : 2.32
+                          train loss : 1.83 
+                          time taken : 149.02 
+Training complete best top1/top5: 12.25%/50.45%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 8 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 49.98%
+                          test loss : 2.36
+                          train loss : 2.07 
+                          time taken : 147.01 
+Training complete best top1/top5: 9.98%/49.98%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 6 Linear evaluating FL model
+Client 5 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 49.97%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 143.84 
+Training complete best top1/top5: 9.98%/49.97%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 7 Linear evaluating FL model
+Client 2 Linear evaluating FL model
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.00%
+                          test acc/top5 : 50.03%
+                          test loss : 2.36
+                          train loss : 1.86 
+                          time taken : 145.39 
+Training complete best top1/top5: 10.00%/50.03%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 6 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 49.98%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 142.93 
+Training complete best top1/top5: 9.98%/49.98%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 1 Linear evaluating FL model
+Client 7 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.02%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 142.64 
+Training complete best top1/top5: 9.98%/50.02%
+Client 9 Linear evaluating FL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.68%
+                          test acc/top5 : 49.39%
+                          test loss : 2.34
+                          train loss : 1.88 
+                          time taken : 141.45 
+Training complete best top1/top5: 10.68%/49.39%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 12.83%
+                          test acc/top5 : 49.42%
+                          test loss : 2.33
+                          train loss : 1.83 
+                          time taken : 140.81 
+Training complete best top1/top5: 12.83%/49.42%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 9 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 49.99%
+                          test loss : 2.36
+                          train loss : 1.85 
+                          time taken : 140.47 
+Training complete best top1/top5: 9.99%/49.99%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+0 summary
+1 summary
+2 summary
+3 summary
+4 summary
+5 summary
+6 summary
+7 summary
+8 summary
+9 summary
+10
+Client -1 Linear evaluating FL model
+#######################################################
+ 
+Avg Validation Stats after 2 global rounds
+Validation Loss     : 2.31
+Validation Accuracy : top1/top5 11.05%/49.97%
+
+#######################################################
+
+ | Global Training Round : 3 |
+
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211243-lbnwnp6m
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/lbnwnp6m
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211249-1t78evac
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/1t78evac
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211256-38hv9t4g
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/38hv9t4g
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211302-5h1jcteo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/5h1jcteo
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211310-6fv1ewfl
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/6fv1ewfl
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211317-mzcboeme
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/mzcboeme
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211326-353nzbyt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/353nzbyt
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211333-1mz6iooq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/1mz6iooq
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211341-1f9y3lu3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/1f9y3lu3
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211349-3qeb567d
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/3qeb567d
+Client 5 Linear evaluating FL model
+Client 2 Linear evaluating FL model
+Client 4 Linear evaluating FL model
+Client 9 Linear evaluating FL model
+Client 5 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.06%
+                          test loss : 2.35
+                          train loss : 1.92 
+                          time taken : 145.89 
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 50.01%
+                          test loss : 2.34
+                          train loss : 2.10 
+                          time taken : 146.42 
+Client 7 Linear evaluating FL model
+Client 4 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.00%
+                          test acc/top5 : 50.00%
+                          test loss : 2.36
+                          train loss : 1.86 
+                          time taken : 147.23 
+Client 6 Linear evaluating FL model
+Client 9 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 49.96%
+                          test loss : 2.36
+                          train loss : 1.85 
+                          time taken : 148.07 
+Client 3 Linear evaluating FL model
+Client 7 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 49.98%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 151.33 
+Client 1 Linear evaluating FL model
+Client 0 Linear evaluating FL model
+Client 6 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.00%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 153.57 
+Client 8 Linear evaluating FL model
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 52.91%
+                          test loss : 2.36
+                          train loss : 2.03 
+                          time taken : 155.36 
+Client 1 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 49.95%
+                          test loss : 2.36
+                          train loss : 2.05 
+                          time taken : 157.10 
+Client 0 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.70%
+                          test acc/top5 : 50.02%
+                          test loss : 2.34
+                          train loss : 2.12 
+                          time taken : 156.06 
+Client 8 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.00%
+                          test loss : 2.36
+                          train loss : 2.07 
+                          time taken : 157.11 
+Client 5 Linear evaluating FL model
+Client 2 Linear evaluating FL model
+Client 4 Linear evaluating FL model
+Client 9 Linear evaluating FL model
+Client 5 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 49.99%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 152.87 
+Training complete best top1/top5: 9.98%/49.99%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 13.10%
+                          test acc/top5 : 50.01%
+                          test loss : 2.32
+                          train loss : 1.84 
+                          time taken : 152.28 
+Training complete best top1/top5: 13.10%/50.01%
+Client 7 Linear evaluating FL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 4 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 10.00%
+                          test acc/top5 : 50.00%
+                          test loss : 2.36
+                          train loss : 1.86 
+                          time taken : 149.58 
+Training complete best top1/top5: 10.00%/50.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 6 Linear evaluating FL model
+Client 9 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 49.96%
+                          test loss : 2.36
+                          train loss : 1.85 
+                          time taken : 149.26 
+Training complete best top1/top5: 9.99%/49.96%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 3 Linear evaluating FL model
+Client 7 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 49.98%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 150.43 
+Training complete best top1/top5: 9.98%/49.98%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 1 Linear evaluating FL model
+Client 6 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.00%
+                          test loss : 2.36
+                          train loss : 1.93 
+                          time taken : 147.00 
+Training complete best top1/top5: 9.98%/50.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 0 Linear evaluating FL model
+Client 3 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.99%
+                          test acc/top5 : 50.02%
+                          test loss : 2.36
+                          train loss : 2.03 
+                          time taken : 147.97 
+Training complete best top1/top5: 9.99%/50.02%
+Client 8 Linear evaluating FL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 1 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 13.16%
+                          test acc/top5 : 47.21%
+                          test loss : 2.33
+                          train loss : 1.83 
+                          time taken : 145.85 
+Training complete best top1/top5: 13.16%/47.21%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 0 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.49%
+                          test acc/top5 : 49.88%
+                          test loss : 2.36
+                          train loss : 1.96 
+                          time taken : 146.38 
+Training complete best top1/top5: 9.49%/49.88%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 8 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 9.98%
+                          test acc/top5 : 50.00%
+                          test loss : 2.36
+                          train loss : 2.07 
+                          time taken : 145.86 
+Training complete best top1/top5: 9.98%/50.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+0 summary
+1 summary
+2 summary
+3 summary
+4 summary
+5 summary
+6 summary
+7 summary
+8 summary
+9 summary
+10
+Client -1 Linear evaluating FL model
+#######################################################
+ 
+Avg Validation Stats after 3 global rounds
+Validation Loss     : 2.36
+Validation Accuracy : top1/top5 9.98%/49.98%
+
+#######################################################
+
+ | Global Training Round : 4 |
+
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211910-3inpnrd6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/3inpnrd6
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211916-ex0gkz78
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/ex0gkz78
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211922-1015rxjm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/1015rxjm
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211929-3ngzt5ke
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/3ngzt5ke
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220810_211936-1rup31rj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220810_205852
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/1rup31rj
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+slurmstepd: error: *** JOB 169136 ON b02 CANCELLED AT 2022-08-10T21:19:47 ***

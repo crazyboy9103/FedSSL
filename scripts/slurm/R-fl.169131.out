@@ -627,3 +627,4 @@ Traceback (most recent call last):
   File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1081, in init
     raise Exception("problem") from error_seen
 Exception: problem
+slurmstepd: error: *** JOB 169131 ON b02 CANCELLED AT 2022-08-10T20:46:11 ***
