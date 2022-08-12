@@ -63,7 +63,7 @@ class Trainer():
         loss = loss_a + loss_b
         return loss
     
-    def train(self, q=None, now=None):
+    def train(self, q=None):
         self.model.set_mode("train") # change to train mode (requires_grad = False for backbone if freeze=True)
         
         optimizer = self.optim_dict[self.args.optimizer](
@@ -71,7 +71,7 @@ class Trainer():
             self.args.lr
         )
 
-        wandb_writer = None
+        # wandb_writer = None
         start = time.time()
         for epoch in range(self.local_epochs):
             # Metric
@@ -107,20 +107,20 @@ class Trainer():
             # Train metrics
             avg_loss = running_loss.get_result()
             
-            if now != None:
-                if wandb_writer == None:
-                    wandb_writer = wandb.init(
-                        reinit = True,
-                        name = now, 
-                        project = "Fed", 
-                        save_code = True, 
-                        resume = "allow", 
-                        id = now
-                    )
+            # if now != None:
+            #     if wandb_writer == None:
+            #         wandb_writer = wandb.init(
+            #             reinit = True,
+            #             name = now, 
+            #             project = "Fed", 
+            #             # save_code = True, 
+            #             resume = "auto", 
+            #             id = now
+            #         )
 
-                wandb_writer.log({
-                    f"train_loss_client_{self.client_id}": avg_loss 
-                })
+            #     wandb_writer.log({
+            #         f"train_loss_client_{self.client_id}": avg_loss 
+            #     })
 
             running_loss.reset()
             #print(f"Client {self.client_id} Epoch [{epoch+1}/{self.local_epochs}]: train loss : {avg_loss:.2f}")
@@ -130,7 +130,7 @@ class Trainer():
 
             if (epoch + 1) % 5 == 0:
                 # Test metrics
-                _, test_loss, test_top1, test_top5 = self.test(finetune=False)
+                _, test_loss, test_top1, test_top5 = self.test(finetune=True, epochs=1)
                 
                 end = time.time()
                 time_taken = end-start
@@ -146,28 +146,29 @@ class Trainer():
 
                 
 
-                if now != None:
-                    if wandb_writer == None:
-                        wandb_writer = wandb.init(
-                            reinit = True,
-                            name = now, 
-                            project = "Fed", 
-                            save_code = True, 
-                            resume = "allow", 
-                            id = now
-                        )
+                # if now != None:
+                #     if wandb_writer == None:
+                #         wandb_writer = wandb.init(
+                #             reinit = True,
+                #             name = now, 
+                #             project = "Fed", 
+                #             # save_code = True, 
+                #             resume = "auto", 
+                #             id = now
+                #         )
                     
-                    wandb_writer.log({
-                        f"test_top1_client_{self.client_id}": test_top1, 
-                        f"test_top5_client_{self.client_id}": test_top5,
-                        f"test_loss_client_{self.client_id}": test_loss
-                    })
+                #     wandb_writer.log({
+                #         f"test_top1_client_{self.client_id}": test_top1, 
+                #         f"test_top5_client_{self.client_id}": test_top5,
+                #         f"test_loss_client_{self.client_id}": test_loss
+                #     })
                 
                 state_dict = {
                     "loss": test_loss, 
                     "top1": test_top1, 
                     "top5": test_top5,
-                    "model": copy.deepcopy(self.model.state_dict())
+                    "model": copy.deepcopy(self.model.state_dict()), 
+                    "train_loss" : avg_loss
                 }
                
 

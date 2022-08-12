@@ -36,18 +36,18 @@ def args_parser():
     parser.add_argument("--alpha",            type=float,     default=0.5,       help="dirichlet param 0<alpha<infty controls iidness alpha=0:non iid")
 
     
-    parser.add_argument('--adapt_epoch',      type=int,       default=10,        help="adaptation epochs")
+    #parser.add_argument('--adapt_epoch',      type=int,       default=10,        help="adaptation epochs")
     parser.add_argument('--strength',         type=float,     default=0.5,       help="augmentation strength 0<s<1")
     parser.add_argument('--target_size',      type=int,       default=32,        help="augmentation target width (=height)")
     parser.add_argument('--out_dim',          type=int,       default=512,       help="output dimension of the feature for simclr and simsiam")
     parser.add_argument('--freeze',           type=str2bool,  default=False,      help='freeze feature extractor during linear eval')
     parser.add_argument('--n_views',          type=int,       default=2,         help="default simclr n_views=2")
-    parser.add_argument('--warmup_bs',        type=int,       default=512,       help="warmup batch size")
-    parser.add_argument('--warmup_epochs',    type=int,       default=30,        help="warmup epochs")
+    #parser.add_argument('--warmup_bs',        type=int,       default=512,       help="warmup batch size")
+    #parser.add_argument('--warmup_epochs',    type=int,       default=30,        help="warmup epochs")
     parser.add_argument("--pred_dim",         type=int,       default=256,       help="pred dim for simsiam")
     
-    parser.add_argument("--warmup",           type=str2bool,  default=False,     help="warmup at init")
-    parser.add_argument("--sup_warmup",       type=str2bool,  default=True,      help="supervised warmup")
+    #parser.add_argument("--warmup",           type=str2bool,  default=False,     help="warmup at init")
+    #parser.add_argument("--sup_warmup",       type=str2bool,  default=True,      help="supervised warmup")
     parser.add_argument("--server_data_frac", type=float,     default=0.1,       help="fraction of test data used at the server")
     
     # SimCLR
@@ -56,7 +56,8 @@ def args_parser():
     # FL
     parser.add_argument("--num_users",      type=int,      default=10,        help="num users")
     parser.add_argument("--num_items",      type=int,      default=32,        help="num data each client holds")
-    parser.add_argument('--unequal',        type=str2bool, default=False,      help='unequal num of data')
+    parser.add_argument("--iid",            type=str2bool, default=True,      help="iid on clients")
+    # parser.add_argument('--unequal',        type=str2bool, default=False,      help='unequal num of data')
     parser.add_argument('--epochs',         type=int,      default=200,        help="number of rounds of training") # FedMatch
     parser.add_argument('--frac',           type=float,    default=1,       help='the fraction of clients: C')
     parser.add_argument('--local_ep',       type=int,      default=10,         help="the number of local epochs: E")
@@ -88,4 +89,67 @@ def args_parser():
         args.log_path = os.path.join(args.log_path, getTimestamp())
     if not args.finetune:
         args.finetune_epoch = 1
+
+
+    if args.exp == "lower" or args.exp == "FL":
+        get_lowerbound_opts(args, args.iid)
+
+    elif args.exp == "upper":
+        get_upperbound_opts(args, args.iid)
+    
+    elif args.exp == "simclr":
+        get_simclr_opts(args, args.iid)
+
+    elif args.exp == "simsiam":
+        get_simsiam_opts(args, args.iid)
+
+    #############TODO My method#################
+
     return args
+
+def get_lowerbound_opts(args, iid = False):
+    args.exp = "FL"
+    if iid == True:
+        args.alpha = 100000 # arbitrary large number for iid
+
+    else:
+        args.alpha = 0.5    # Non-i.i.d. 
+    
+    args.num_users = 100
+    args.num_items = 300
+    args.epochs  = 100
+    args.frac = 0.1
+    args.local_ep = 10 
+    args.local_bs = 16    
+
+def get_upperbound_opts(args, iid = False):
+    args.exp = "FL"
+    if iid == True:
+        args.alpha = 100000
+
+    else:
+        args.alpha = 0.5
+
+    args.num_users = 100
+    args.num_items = 300
+    args.epochs = 100
+    args.frac = 0.1
+    args.local_ep = 10
+    args.local_bs = 16
+
+def get_simclr_opts(args, iid = False):
+    args.exp = "simclr"
+    if iid == True:
+        args.alpha = 100000
+    else:
+        args.alpha = 0.5
+
+    args.num_users = 100
+    args.num_items = 300
+    args.epochs = 100
+    args.frac = 0.1
+    args.local_ep = 10
+    args.local_bs = 16
+
+
+

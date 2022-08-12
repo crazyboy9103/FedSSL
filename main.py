@@ -14,6 +14,14 @@ from trainers import Trainer
 from models import ResNet_model
 from utils import get_dataset, average_weights, exp_details#, compute_similarity
 
+# import atexit
+
+# def exit_handler():
+#     from notify_run import Notify
+#     notify = Notify()
+#     notify.send("Done")
+
+# atexit.register(exit_handler)
 
 torch.multiprocessing.set_start_method('spawn', force=True)
 mp.set_start_method('spawn', force=True)
@@ -69,10 +77,11 @@ if __name__ == '__main__':
     # number of participating clients
     num_clients_part = int(args.frac * args.num_users)
     assert num_clients_part > 0
-
+        
     # Training 
     for epoch in range(args.epochs):
         local_weights, local_losses, local_top1s, local_top5s = {}, {}, {}, {}
+        local_train_losses = {}
         print(f'\n | Global Training Round : {epoch+1} |\n')
         
         # Select clients for training in this round
@@ -104,8 +113,9 @@ if __name__ == '__main__':
                 pin_memory=True
             )
             
-            curr_device = torch.device(f"cuda:{i%2}")
-            print(curr_device)
+            gpu_count = torch.cuda.device_count()
+            curr_device = torch.device(f"cuda:{i%gpu_count}")
+            #print(curr_device)
             trainer = Trainer(
                 args = args,
                 model = client_model, 
@@ -117,17 +127,18 @@ if __name__ == '__main__':
 
             if args.parallel:
                 #mp.set_start_method('spawn')
-                p = mp.Process(target = trainer.train, args=(q, now,))
+                p = mp.Process(target = trainer.train, args=(q,))
                 processes.append(p)
 
             else:
-                summary = trainer.train(now=now)
-                test_loss, test_top1, test_top5, model_state_dict = summary["loss"], summary["top1"], summary["top5"], summary["model"]
+                summary = trainer.train()
+                test_loss, test_top1, test_top5, model_state_dict, train_loss = summary["loss"], summary["top1"], summary["top5"], summary["model"], summary["train_loss"]
             
                 local_weights[i] = model_state_dict
                 local_losses[i] = test_loss
                 local_top1s[i] = test_top1
                 local_top5s[i] = test_top5
+                local_train_losses[i] = train_loss
 
         if args.parallel:
             for proc in processes:
@@ -142,13 +153,21 @@ if __name__ == '__main__':
             for i in range(num_clients_part):
                 summary = q.get()
                 print(f"{i} summary")
-                test_loss, test_top1, test_top5, model_state_dict = summary["loss"], summary["top1"], summary["top5"], summary["model"]
+                test_loss, test_top1, test_top5, model_state_dict, train_loss = summary["loss"], summary["top1"], summary["top5"], summary["model"], summary["train_loss"]
             
                 local_weights[i] = model_state_dict
                 local_losses[i] = test_loss
                 local_top1s[i] = test_top1
                 local_top5s[i] = test_top5
-
+                local_train_losses[i] = train_loss
+        
+        for i in range(num_clients_part):
+            wandb_writer.log({
+                f"train_loss_cli_{i}": local_train_losses[i], 
+                f"test_loss_cli_{i}": local_losses[i], 
+                f"top1_cli_{i}": local_top1s[i], 
+                f"top5_cli_{i}": local_top5s[i] 
+            })
         print(len(local_weights))
         # aggregate weights
         global_weights = average_weights(local_weights)
@@ -188,7 +207,7 @@ if __name__ == '__main__':
         else:
             state_dict, loss_avg, top1_avg, top5_avg = server_model.test(
                 finetune=False, 
-                epochs=args.finetune_epoch
+                epochs=1
             )
             
         print("#######################################################")
@@ -196,3 +215,9 @@ if __name__ == '__main__':
         print(f'Validation Loss     : {loss_avg:.2f}')
         print(f'Validation Accuracy : top1/top5 {top1_avg:.2f}%/{top5_avg:.2f}%\n')
         print("#######################################################")
+
+        wandb_writer.log({
+            "test_loss_server": loss_avg, 
+            "top1_server": top1_avg,
+            "top5_server": top5_avg 
+        })

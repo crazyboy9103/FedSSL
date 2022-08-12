@@ -1,4 +1,0 @@
-  File "/home/kwangyeongill/FedSSL_clean/main.py", line 213
-    "top1_server": top1_avg
-    ^
-SyntaxError: invalid syntax

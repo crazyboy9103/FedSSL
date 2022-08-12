@@ -214,7 +214,7 @@ class ResNet_model(nn.Module):
             
             self.predictor = nn.Sequential(
                 nn.Linear(out_dim, num_classes, bias=True), 
-                nn.Softmax(dim=-1)
+                # nn.Softmax(dim=-1)
             )
 
         elif self.exp == "simsiam":
@@ -239,7 +239,7 @@ class ResNet_model(nn.Module):
             
             self.predictor = nn.Sequential(
                 nn.Linear(out_dim, num_classes, bias=True),
-                nn.Softmax(dim=-1)
+                # nn.Softmax(dim=-1)
             )
             
             
@@ -248,7 +248,7 @@ class ResNet_model(nn.Module):
             
             self.predictor = nn.Sequential(
                 nn.Linear(in_features, num_classes, bias=True), 
-                nn.Softmax(dim=-1)
+                # nn.Softmax(dim=-1)
             )
             
     def set_mode(self, mode):

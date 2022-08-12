@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=fl
+#SBATCH --job-name=fl_noniid
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:2
 #SBATCH --time=0-12:00:00
@@ -11,4 +11,4 @@
 
 eval "$(conda shell.bash hook)"
 conda activate FedSSL
-cd /home/kwangyeongill/FedSSL_clean/ && python main.py --parallel True --group_norm True
+cd /home/kwangyeongill/FedSSL_clean/ && python main.py --parallel True --group_norm True --exp FL --iid False

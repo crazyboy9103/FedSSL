@@ -1,0 +1,90 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: ERROR Error while calling W&B API: Error 1062: Duplicate entry '36808833-20220811_225828' for key 'PRIMARY' (<Response [409]>)
+Thread WriterThread:
+Traceback (most recent call last):
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/internal/internal_util.py", line 51, in run
+    self._run()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/internal/internal_util.py", line 102, in _run
+    self._process(record)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/internal/internal.py", line 353, in _process
+    self._wm.write(record)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/internal/writer.py", line 29, in write
+    self.open()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/internal/writer.py", line 25, in open
+    self._ds.open_for_write(self._settings.sync_file)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/internal/datastore.py", line 77, in open_for_write
+    self._fp = open(fname, open_flags)
+FileExistsError: [Errno 17] File exists: '/home/kwangyeongill/FedSSL_clean/wandb/run-20220811_225834-20220811_225828/run-20220811_225828.wandb'
+wandb: ERROR Internal wandb error: file data was not synced
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220811_225834-20220811_225828
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run 20220811_225828
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220811_225828
+Traceback (most recent call last):
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1043, in init
+    run = wi.init()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 731, in init
+    run._on_start()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 2005, in _on_start
+    self._on_ready()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 2046, in _on_ready
+    self._telemetry_flush()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 611, in _telemetry_flush
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 79, in _publish_telemetry
+    self._publish(rec)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/interface/interface_sock.py", line 51, in _publish
+    self._sock_client.send_record_publish(record)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 150, in send_record_publish
+    self.send_server_request(server_req)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 84, in send_server_request
+    self._send_message(msg)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 81, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 61, in _sendall_with_error_handle
+    sent = self._sock.send(data[total_sent:])
+BrokenPipeError: [Errno 32] Broken pipe
+wandb: ERROR Abnormal program exit
+Problem at: /home/kwangyeongill/FedSSL_clean/main.py 22 <module>
+Traceback (most recent call last):
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1043, in init
+    run = wi.init()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 731, in init
+    run._on_start()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 2005, in _on_start
+    self._on_ready()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 2046, in _on_ready
+    self._telemetry_flush()
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 611, in _telemetry_flush
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/interface/interface_shared.py", line 79, in _publish_telemetry
+    self._publish(rec)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/interface/interface_sock.py", line 51, in _publish
+    self._sock_client.send_record_publish(record)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 150, in send_record_publish
+    self.send_server_request(server_req)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 84, in send_server_request
+    self._send_message(msg)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 81, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 61, in _sendall_with_error_handle
+    sent = self._sock.send(data[total_sent:])
+BrokenPipeError: [Errno 32] Broken pipe
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/kwangyeongill/FedSSL_clean/main.py", line 22, in <module>
+    wandb_writer = wandb.init(
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1081, in init
+    raise Exception("problem") from error_seen
+Exception: problem
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 81, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 61, in _sendall_with_error_handle
+    sent = self._sock.send(data[total_sent:])
+BrokenPipeError: [Errno 32] Broken pipe
