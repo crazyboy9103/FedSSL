@@ -106,24 +106,7 @@ class Trainer():
             
             # Train metrics
             avg_loss = running_loss.get_result()
-            
-            # if now != None:
-            #     if wandb_writer == None:
-            #         wandb_writer = wandb.init(
-            #             reinit = True,
-            #             name = now, 
-            #             project = "Fed", 
-            #             # save_code = True, 
-            #             resume = "auto", 
-            #             id = now
-            #         )
-
-            #     wandb_writer.log({
-            #         f"train_loss_client_{self.client_id}": avg_loss 
-            #     })
-
             running_loss.reset()
-            #print(f"Client {self.client_id} Epoch [{epoch+1}/{self.local_epochs}]: train loss : {avg_loss:.2f}")
 
             
             lr = optimizer.param_groups[0]['lr']
@@ -145,24 +128,6 @@ class Trainer():
                           time taken : {time_taken:.2f} """)
 
                 
-
-                # if now != None:
-                #     if wandb_writer == None:
-                #         wandb_writer = wandb.init(
-                #             reinit = True,
-                #             name = now, 
-                #             project = "Fed", 
-                #             # save_code = True, 
-                #             resume = "auto", 
-                #             id = now
-                #         )
-                    
-                #     wandb_writer.log({
-                #         f"test_top1_client_{self.client_id}": test_top1, 
-                #         f"test_top5_client_{self.client_id}": test_top5,
-                #         f"test_loss_client_{self.client_id}": test_loss
-                #     })
-                
                 state_dict = {
                     "loss": test_loss, 
                     "top1": test_top1, 
@@ -179,8 +144,7 @@ class Trainer():
             q.put(state_dict)
             
         return state_dict
-    
-    
+        
     def test(self, finetune=False, epochs=1):
         print(f"Client {self.client_id} Linear evaluating {self.exp} model")
         eval_model = copy.deepcopy(self.model)

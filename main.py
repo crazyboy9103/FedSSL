@@ -12,7 +12,7 @@ from datetime import datetime
 
 from trainers import Trainer
 from models import ResNet_model
-from utils import get_dataset, average_weights, exp_details#, compute_similarity
+from utils import get_dataset, average_weights, exp_details, CheckpointManager
 
 # import atexit
 
@@ -27,16 +27,17 @@ torch.multiprocessing.set_start_method('spawn', force=True)
 mp.set_start_method('spawn', force=True)
 if __name__ == '__main__':
     now = datetime.now().strftime('%Y%m%d_%H%M%S')
+
+    args = args_parser()
+
     wandb_writer = wandb.init(
         reinit = True,
         name = now,
         project = "Fed", 
         save_code = True, 
         resume = "allow",
-        id = now
+        id = now if args.wandb_tag == "" else args.wandb_tag
     )
-
-    args = args_parser()
 
     config = {
         "model": args.model, 
@@ -77,7 +78,10 @@ if __name__ == '__main__':
     # number of participating clients
     num_clients_part = int(args.frac * args.num_users)
     assert num_clients_part > 0
-        
+    
+    # Save checkpoint of best model so far
+    ckpt_manager = CheckpointManager(args.ckpt_criterion)
+
     # Training 
     for epoch in range(args.epochs):
         local_weights, local_losses, local_top1s, local_top5s = {}, {}, {}, {}
@@ -221,3 +225,6 @@ if __name__ == '__main__':
             "top1_server": top1_avg,
             "top5_server": top5_avg 
         })
+        
+        ckpt_manager.save(loss_avg, top1_avg, state_dict, args.ckpt_path)
+

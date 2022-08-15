@@ -179,6 +179,44 @@ def average_weights(w):
         w_avg[key] = torch.div(w_avg[key], len(w))
     return w_avg
 
+class CheckpointManager():
+    def __init__(self, type):
+        self.type = type
+        if type == "loss":
+            self.best_loss = 1E27 
+        
+        elif type == "top1":
+            self.best_top1 = -1E27 
+
+    def _check_loss(self, loss):
+        if loss < self.best_loss:
+            self.best_loss = loss
+            return True
+        
+        return False
+    
+    def _check_top1(self, top1):
+        if top1 > self.best_top1:
+            self.best_top1 = top1
+            return True
+        
+        return False
+
+
+    def save(self, loss, top1, model_state_dict, checkpoint_path):
+        save_dict = {
+            "model_state_dict": model_state_dict, 
+            # "optim_state_dict": optim_state_dict, 
+            "loss": loss, 
+            "top1": top1
+        }
+        if self.type == "loss" and self._check_loss(loss):
+            torch.save(save_dict, checkpoint_path)
+
+        elif self.type == "top1" and self._check_top1(top1):
+            torch.save(save_dict, checkpoint_path)
+
+        print(f"model saved at {checkpoint_path}")
 
 def exp_details(args, writer):
     print('Experimental details:')

@@ -171,51 +171,18 @@ class ResNet_model(nn.Module):
                 layers[i][1].bn2 = nn.GroupNorm(
                     layers[i][1].bn2.num_features // 4, 
                     layers[i][1].bn2.num_features
-                )
-
-            # self.backbone.layer1[0].bn1 = nn.GroupNorm(16, self.backbone.layer1[0].bn1.num_features)
-            # self.backbone.layer1[0].bn2 = nn.GroupNorm(16, self.backbone.layer1[0].bn2.num_features)
-            # self.backbone.layer1[1].bn1 = nn.GroupNorm(16, self.backbone.layer1[1].bn1.num_features)
-            # self.backbone.layer1[1].bn2 = nn.GroupNorm(16, self.backbone.layer1[1].bn2.num_features)
-
-            # self.backbone.layer2[0].bn1 = nn.GroupNorm(32, self.backbone.layer2[0].bn1.num_features)
-            # self.backbone.layer2[0].bn2 = nn.GroupNorm(32, self.backbone.layer2[0].bn2.num_features)
-            # self.backbone.layer2[0].downsample[1] = nn.GroupNorm(32, self.backbone.layer2[0].downsample[1].num_features)
-            # self.backbone.layer2[1].bn1 = nn.GroupNorm(32, self.backbone.layer2[1].bn1.num_features)
-            # self.backbone.layer2[1].bn2 = nn.GroupNorm(32, self.backbone.layer2[1].bn2.num_features)
-
-            # self.backbone.layer3[0].bn1 = nn.GroupNorm(64, self.backbone.layer3[0].bn1.num_features)
-            # self.backbone.layer3[0].bn2 = nn.GroupNorm(64, self.backbone.layer3[0].bn2.num_features)
-            # self.backbone.layer3[0].downsample[1] = nn.GroupNorm(64, self.backbone.layer3[0].downsample[1].num_features)
-            # self.backbone.layer3[1].bn1 = nn.GroupNorm(64, self.backbone.layer3[1].bn1.num_features)
-            # self.backbone.layer3[1].bn2 = nn.GroupNorm(64, self.backbone.layer3[1].bn2.num_features)
-
-            # self.backbone.layer4[0].bn1 = nn.GroupNorm(128, self.backbone.layer4[0].bn1.num_features)
-            # self.backbone.layer4[0].bn2 = nn.GroupNorm(128, self.backbone.layer4[0].bn2.num_features)
-            # self.backbone.layer4[0].downsample[1] = nn.GroupNorm(128, self.backbone.layer4[0].downsample[1].num_features)
-            # self.backbone.layer4[1].bn1 = nn.GroupNorm(128, self.backbone.layer4[1].bn1.num_features)
-            # self.backbone.layer4[1].bn2 = nn.GroupNorm(128, self.backbone.layer4[1].bn2.num_features)
-
-            # for i, module in enumerate(self.backbone.modules()):
-            #     classname = module.__class__.__name__
-            #     if 'BatchNorm2d' in classname:
-            #         #print(module.num_features)
-            #         num_channels = module.num_features
-            #         num_groups = 16
-                    
-
+                )             
 
         if self.exp == "simclr":
             self.backbone.fc = nn.Sequential(
-                nn.Linear(in_features, in_features, bias=True), 
-                nn.ReLU(), 
                 nn.Linear(in_features, out_dim, bias=True), 
+                nn.ReLU(inplace=True), 
+                nn.Linear(out_dim, out_dim, bias=True), 
+                nn.ReLU(inplace=True), 
+                nn.Linear(out_dim, out_dim, bias=True)
             )
             
-            self.predictor = nn.Sequential(
-                nn.Linear(out_dim, num_classes, bias=True), 
-                # nn.Softmax(dim=-1)
-            )
+            self.predictor = nn.Linear(out_dim, num_classes, bias=True)
 
         elif self.exp == "simsiam":
             assert pred_dim != None
@@ -237,19 +204,13 @@ class ResNet_model(nn.Module):
                 nn.Linear(pred_dim, out_dim)
             )
             
-            self.predictor = nn.Sequential(
-                nn.Linear(out_dim, num_classes, bias=True),
-                # nn.Softmax(dim=-1)
-            )
+            self.predictor = nn.Linear(out_dim, num_classes, bias=True)
             
             
         elif self.exp == "FL":
             self.backbone.fc = nn.Identity()
             
-            self.predictor = nn.Sequential(
-                nn.Linear(in_features, num_classes, bias=True), 
-                # nn.Softmax(dim=-1)
-            )
+            self.predictor = nn.Linear(in_features, num_classes, bias=True)
             
     def set_mode(self, mode):
         self.mode = mode
