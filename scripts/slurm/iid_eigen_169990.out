@@ -1,0 +1,310 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220821_021524-20220821_021522
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run FL_iid_bn_fedavg_eigen
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220821_021522
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+[W CudaIPCTypes.cpp:92] Producer process tried to deallocate over 1000 memory blocks referred by consumer processes. Deallocation might be significantly slowed down. We assume it will never going to be the case, but if it is, please file but to https://github.com/pytorch/pytorch
+Client 9 Linear evaluating FL model
+Client 7 Linear evaluating FL model
+Client 58 Linear evaluating FL model
+Client 49 Linear evaluating FL model
+Client 9 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.90%
+                          test acc/top5 : 87.44%
+                          test loss : 1.76
+                          train loss : 1.20 
+                          time taken : 178.64 
+Client 67 Linear evaluating FL model
+Client 7 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.96%
+                          test acc/top5 : 86.42%
+                          test loss : 1.81
+                          train loss : 1.02 
+                          time taken : 184.40 
+Client 42 Linear evaluating FL model
+Client 58 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.70%
+                          test acc/top5 : 87.28%
+                          test loss : 1.75
+                          train loss : 0.86 
+                          time taken : 184.10 
+Client 53 Linear evaluating FL model
+Client 49 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.76%
+                          test acc/top5 : 88.22%
+                          test loss : 1.72
+                          train loss : 1.02 
+                          time taken : 185.66 
+Client 66 Linear evaluating FL model
+Client 67 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.30%
+                          test acc/top5 : 87.52%
+                          test loss : 1.77
+                          train loss : 1.08 
+                          time taken : 186.97 
+Client 26 Linear evaluating FL model
+Client 56 Linear evaluating FL model
+Client 42 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.40%
+                          test acc/top5 : 87.08%
+                          test loss : 1.78
+                          train loss : 0.87 
+                          time taken : 187.02 
+Client 53 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.86%
+                          test acc/top5 : 87.86%
+                          test loss : 1.74
+                          train loss : 1.18 
+                          time taken : 191.28 
+Client 66 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.02%
+                          test acc/top5 : 88.10%
+                          test loss : 1.75
+                          train loss : 1.63 
+                          time taken : 190.22 
+Client 26 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.48%
+                          test acc/top5 : 89.16%
+                          test loss : 1.73
+                          train loss : 1.04 
+                          time taken : 185.89 
+Client 56 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.06%
+                          test acc/top5 : 87.68%
+                          test loss : 1.77
+                          train loss : 1.28 
+                          time taken : 182.80 
+Client 9 Linear evaluating FL model
+Client 7 Linear evaluating FL model
+Client 58 Linear evaluating FL model
+Client 49 Linear evaluating FL model
+Client 9 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.70%
+                          test acc/top5 : 89.04%
+                          test loss : 1.68
+                          train loss : 0.36 
+                          time taken : 177.20 
+Training complete best top1/top5: 38.70%/89.04%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 67 Linear evaluating FL model
+Client 42 Linear evaluating FL model
+Client 7 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.10%
+                          test acc/top5 : 88.68%
+                          test loss : 1.69
+                          train loss : 0.39 
+                          time taken : 179.32 
+Training complete best top1/top5: 38.10%/88.68%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 58 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.80%
+                          test acc/top5 : 89.04%
+                          test loss : 1.71
+                          train loss : 0.52 
+                          time taken : 177.72 
+Training complete best top1/top5: 38.80%/89.04%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 53 Linear evaluating FL model
+Client 49 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.44%
+                          test acc/top5 : 87.80%
+                          test loss : 1.79
+                          train loss : 0.59 
+                          time taken : 178.17 
+Training complete best top1/top5: 36.44%/87.80%
+Client 66 Linear evaluating FL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 26 Linear evaluating FL model
+Client 67 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.92%
+                          test acc/top5 : 87.64%
+                          test loss : 1.75
+                          train loss : 0.44 
+                          time taken : 178.17 
+Training complete best top1/top5: 36.92%/87.64%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 56 Linear evaluating FL model
+Client 42 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.94%
+                          test acc/top5 : 88.64%
+                          test loss : 1.69
+                          train loss : 0.50 
+                          time taken : 176.82 
+Training complete best top1/top5: 39.94%/88.64%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 53 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.88%
+                          test acc/top5 : 88.56%
+                          test loss : 1.75
+                          train loss : 0.78 
+                          time taken : 174.88 
+Training complete best top1/top5: 36.88%/88.56%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 66 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.60%
+                          test acc/top5 : 88.28%
+                          test loss : 1.77
+                          train loss : 0.68 
+                          time taken : 174.43 
+Training complete best top1/top5: 37.60%/88.28%
+Client 26 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.22%
+                          test acc/top5 : 87.72%
+                          test loss : 1.71
+                          train loss : 0.61 
+                          time taken : 170.56 
+Training complete best top1/top5: 38.22%/87.72%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 56 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.72%
+                          test acc/top5 : 87.30%
+                          test loss : 1.79
+                          train loss : 0.63 
+                          time taken : 169.46 
+Training complete best top1/top5: 37.72%/87.30%
+/home/kwangyeongill/FedSSL_clean/main.py:181: UserWarning: torch.symeig is deprecated in favor of torch.linalg.eigh and will be removed in a future PyTorch release.
+The default behavior has changed from using the upper triangular portion of the matrix by default to using the lower triangular portion.
+L, _ = torch.symeig(A, upper=upper)
+should be replaced with
+L = torch.linalg.eigvalsh(A, UPLO='U' if upper else 'L')
+and
+L, V = torch.symeig(A, eigenvectors=True)
+should be replaced with
+L, V = torch.linalg.eigh(A, UPLO='U' if upper else 'L') (Triggered internally at  /opt/conda/conda-bld/pytorch_1646756402876/work/aten/src/ATen/native/BatchLinearAlgebra.cpp:2524.)
+  e, _ = symmetrized.symeig(True)
+0 summary
+1 summary
+2 summary
+3 summary
+4 summary
+5 summary
+6 summary
+7 summary
+8 summary
+9 summary
+Traceback (most recent call last):
+  File "/home/kwangyeongill/FedSSL_clean/main.py", line 181, in <module>
+    e, _ = symmetrized.symeig(True)
+torch._C._LinAlgError: symeig_cuda: The algorithm failed to converge because the input matrix is ill-conditioned or has too many repeated eigenvalues (error code: 764).
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: - 0.038 MB of 0.038 MB uploaded (0.009 MB deduped)[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+wandb: \ 0.038 MB of 0.038 MB uploaded (0.009 MB deduped)wandb: | 0.038 MB of 0.051 MB uploaded (0.009 MB deduped)wandb: / 0.038 MB of 0.051 MB uploaded (0.009 MB deduped)wandb: - 0.038 MB of 0.051 MB uploaded (0.009 MB deduped)wandb: \ 0.050 MB of 0.051 MB uploaded (0.009 MB deduped)wandb: | 0.051 MB of 0.051 MB uploaded (0.009 MB deduped)wandb: / 0.051 MB of 0.051 MB uploaded (0.009 MB deduped)wandb: - 0.051 MB of 0.051 MB uploaded (0.009 MB deduped)wandb: \ 0.051 MB of 0.051 MB uploaded (0.009 MB deduped)wandb: | 0.051 MB of 0.051 MB uploaded (0.009 MB deduped)wandb: / 0.051 MB of 0.051 MB uploaded (0.009 MB deduped)wandb: - 0.051 MB of 0.051 MB uploaded (0.009 MB deduped)wandb:                                                                                
+wandb: W&B sync reduced upload amount by 17.1%             
+wandb: 
+wandb: Run history:
+wandb:  test_loss_cli_0 ▁
+wandb:  test_loss_cli_1 ▁
+wandb:  test_loss_cli_2 ▁
+wandb:  test_loss_cli_3 ▁
+wandb:  test_loss_cli_4 ▁
+wandb:  test_loss_cli_5 ▁
+wandb:  test_loss_cli_6 ▁
+wandb:  test_loss_cli_7 ▁
+wandb:  test_loss_cli_8 ▁
+wandb:  test_loss_cli_9 ▁
+wandb:       top1_cli_0 ▁
+wandb:       top1_cli_1 ▁
+wandb:       top1_cli_2 ▁
+wandb:       top1_cli_3 ▁
+wandb:       top1_cli_4 ▁
+wandb:       top1_cli_5 ▁
+wandb:       top1_cli_6 ▁
+wandb:       top1_cli_7 ▁
+wandb:       top1_cli_8 ▁
+wandb:       top1_cli_9 ▁
+wandb:       top5_cli_0 ▁
+wandb:       top5_cli_1 ▁
+wandb:       top5_cli_2 ▁
+wandb:       top5_cli_3 ▁
+wandb:       top5_cli_4 ▁
+wandb:       top5_cli_5 ▁
+wandb:       top5_cli_6 ▁
+wandb:       top5_cli_7 ▁
+wandb:       top5_cli_8 ▁
+wandb:       top5_cli_9 ▁
+wandb: train_loss_cli_0 ▁
+wandb: train_loss_cli_1 ▁
+wandb: train_loss_cli_2 ▁
+wandb: train_loss_cli_3 ▁
+wandb: train_loss_cli_4 ▁
+wandb: train_loss_cli_5 ▁
+wandb: train_loss_cli_6 ▁
+wandb: train_loss_cli_7 ▁
+wandb: train_loss_cli_8 ▁
+wandb: train_loss_cli_9 ▁
+wandb: 
+wandb: Run summary:
+wandb:  test_loss_cli_0 1.684
+wandb:  test_loss_cli_1 1.69259
+wandb:  test_loss_cli_2 1.71355
+wandb:  test_loss_cli_3 1.78884
+wandb:  test_loss_cli_4 1.75225
+wandb:  test_loss_cli_5 1.69286
+wandb:  test_loss_cli_6 1.7463
+wandb:  test_loss_cli_7 1.76526
+wandb:  test_loss_cli_8 1.7117
+wandb:  test_loss_cli_9 1.79099
+wandb:       top1_cli_0 38.69808
+wandb:       top1_cli_1 38.09904
+wandb:       top1_cli_2 38.79792
+wandb:       top1_cli_3 36.44169
+wandb:       top1_cli_4 36.92093
+wandb:       top1_cli_5 39.9361
+wandb:       top1_cli_6 36.88099
+wandb:       top1_cli_7 37.59984
+wandb:       top1_cli_8 38.21885
+wandb:       top1_cli_9 37.71965
+wandb:       top5_cli_0 89.03754
+wandb:       top5_cli_1 88.67812
+wandb:       top5_cli_2 89.03754
+wandb:       top5_cli_3 87.79952
+wandb:       top5_cli_4 87.63978
+wandb:       top5_cli_5 88.63818
+wandb:       top5_cli_6 88.55831
+wandb:       top5_cli_7 88.27875
+wandb:       top5_cli_8 87.71965
+wandb:       top5_cli_9 87.30032
+wandb: train_loss_cli_0 0.35966
+wandb: train_loss_cli_1 0.38564
+wandb: train_loss_cli_2 0.52148
+wandb: train_loss_cli_3 0.5938
+wandb: train_loss_cli_4 0.44293
+wandb: train_loss_cli_5 0.50451
+wandb: train_loss_cli_6 0.78373
+wandb: train_loss_cli_7 0.68126
+wandb: train_loss_cli_8 0.60944
+wandb: train_loss_cli_9 0.62851
+wandb: 
+wandb: Synced FL_iid_bn_fedavg_eigen: https://wandb.ai/crazyboy9103/Fed/runs/20220821_021522
+wandb: Synced 7 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./wandb/run-20220821_021524-20220821_021522/logs
+/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 970 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/home/kwangyeongill/FedSSL_clean/main.py", line 31, in <module>
-    args = args_parser()
-  File "/home/kwangyeongill/FedSSL_clean/options.py", line 104, in args_parser
-    get_simsiam_opts(args, args.iid)
-NameError: name 'get_simsiam_opts' is not defined
