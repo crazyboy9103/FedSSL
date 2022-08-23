@@ -12,7 +12,7 @@
 eval "$(conda shell.bash hook)"
 conda activate FedSSL
 
-exp="FL"
+exp="FLSL"
 dist="noniid"
 iid="False"
 norm="bn"

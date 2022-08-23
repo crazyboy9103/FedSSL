@@ -10,8 +10,132 @@ import torch.nn as nn
 import os
 from torchvision import datasets, transforms
 from torchvision.transforms.functional import rotate
-
 import numpy as np
+import math
+
+class CudaCKA:
+    def __init__(self, device):
+        self.device = device
+    
+    def centering(self, K):
+        n = K.shape[0]
+        unit = torch.ones([n, n], device=self.device)
+        I = torch.eye(n, device=self.device)
+        H = I - unit / n
+        return torch.matmul(torch.matmul(H, K), H)  
+
+    def rbf(self, X, sigma=None):
+        GX = torch.matmul(X, X.T)
+        KX = torch.diag(GX) - GX + (torch.diag(GX) - GX).T
+        if sigma is None:
+            mdist = torch.median(KX[KX != 0])
+            sigma = math.sqrt(mdist)
+        KX *= - 0.5 / (sigma * sigma)
+        KX = torch.exp(KX)
+        return KX
+
+    def kernel_HSIC(self, X, Y, sigma):
+        return torch.sum(self.centering(self.rbf(X, sigma)) * self.centering(self.rbf(Y, sigma)))
+
+    def linear_HSIC(self, X, Y):
+        L_X = torch.matmul(X, X.T)
+        L_Y = torch.matmul(Y, Y.T)
+        return torch.sum(self.centering(L_X) * self.centering(L_Y))
+
+    def linear_CKA(self, X, Y):
+        hsic = self.linear_HSIC(X, Y)
+        var1 = torch.sqrt(self.linear_HSIC(X, X))
+        var2 = torch.sqrt(self.linear_HSIC(Y, Y))
+
+        return hsic / (var1 * var2)
+
+    def kernel_CKA(self, X, Y, sigma=None):
+        hsic = self.kernel_HSIC(X, Y, sigma)
+        var1 = torch.sqrt(self.kernel_HSIC(X, X, sigma))
+        var2 = torch.sqrt(self.kernel_HSIC(Y, Y, sigma))
+        return hsic / (var1 * var2)
+
+# def evaluate_CKA_by_layer(local_weights_copy, global_model_copy):
+#     global_model_copy.set_mode("linear")
+
+#     noise = torch.rand(1, 3, 32, 32, device="cuda:0", requires_grad=False)
+#     def flatten(tensor):
+#         _, c, h, w = tensor.shape
+#         return tensor.squeeze(0).view(c, h * w)
+
+
+#     output_vectors = {}
+#     for client_id, weight in local_weights_copy.items():
+#         global_model_copy.load_state_dict(weight)
+#         outputs = []
+#         with torch.no_grad():
+#             out = global_model_copy.conv1(noise)
+#             out = global_model_copy.bn1(out)
+#             out = global_model_copy.relu(out)
+#             # head layer (conv1 + bn1 + relu + maxpool) output
+#             output_head = global_model_copy.maxpool(out)
+#             outputs.append(output_head.detach())
+
+#             layers = [global_model_copy.layer1, global_model_copy.layer2, global_model_copy.layer3, global_model_copy.layer4]
+#             out = output_head
+#             for layer in layers:
+#                 out = layer[0](out)
+#                 outputs.append(out.detach())
+#                 out = layer[1](out)
+#                 outputs.append(out.detach())
+
+#         outputs = list(map(lambda tensor: flatten(tensor),  outputs))
+#         output_vectors[client_id] = outputs
+    
+#     for i in range(len(output_vectors)):
+#         for j in range(i+1, len(output_vectors)):
+#             vec
+
+def get_length_gradients(local_weights_copy, global_model_copy):
+    global_state_dict = copy.deepcopy(global_model_copy.state_dict())
+
+    grads = []
+    for client_id, state_dict in local_weights_copy.items():
+        client_grad = []
+        for key, weight in global_state_dict.items():
+            if "weight" in key:
+                l2_norm = torch.linalg.norm(state_dict[key].cpu() - weight.cpu()).detach().item()
+                client_grad.append(l2_norm)
+                print("l2norm", l2_norm)
+        grad_sum = sum(client_grad)
+        print(grad_sum)
+        client_grad = [grad / grad_sum for grad in client_grad] # normalize
+        grads.append(client_grad)
+    print(np.array(grads).shape)
+    means = np.array(grads).T.mean(1).tolist()
+    print("means", means)
+    return means
+
+
+def feed_noise_to_models(local_weights_copy, global_model_copy, batch_size):
+    # global_model_copy.set_mode("linear")
+
+    noise = torch.rand(batch_size, 3, 32, 32, device="cuda:0", requires_grad=False)
+
+    out_vectors = None
+    for client_id, weight in local_weights_copy.items():
+        global_model_copy.load_state_dict(weight)
+        with torch.no_grad():
+            out = global_model_copy.backbone(noise)
+            if hasattr(global_model_copy, "projector"):
+                out = global_model_copy.projector(out)
+
+        if out_vectors == None:
+            out_vectors = out[0].unsqueeze(0)
+        
+        else:
+            out_vectors = torch.cat((out_vectors, out[0].unsqueeze(0)), dim=0)
+    # print(out_vectors.shape)
+    return out_vectors
+
+
+
+
 
 class AverageMeter():
     def __init__(self, name):
@@ -71,18 +195,6 @@ def get_train_idxs(dataset, num_users, num_items, alpha):
     for i, data_idxs in dict_users.items():
         dict_users[i] = list(data_idxs)
     
-
-    
-    # for client_id, dist in dists.items():
-    #     plt.figure(client_id)
-    #     plt.title(f"client {client_id} class distribution")
-    #     plt.xlabel("class")
-    #     plt.ylabel("num items")
-    #     plt.bar(range(10), dist, label=client_id)
-    #     plt.savefig(f"./alpha/client_{client_id}_{sum(dist)}_{alpha}_{num_users}.png")
-    #     plt.clf()
-    
-    
     return dict_users
 
 
@@ -99,7 +211,7 @@ def get_dataset(args):
     cifar_data_path = os.path.join(args.data_path, "cifar")
     mnist_data_path = os.path.join(args.data_path, "mnist")
     # transforms set according to https://github.com/guobbin/PFL-MoE/blob/master/main_fed.py
-    if args.exp == "simclr" or args.exp == "simsiam":
+    if args.exp in ["simclr", "simsiam"]:
         s = args.strength
         target_size = args.target_size
         
@@ -120,8 +232,8 @@ def get_dataset(args):
             transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
         ])
         
-    # Normal FL
-    elif args.exp == "FL":
+    # Normal FL or centralized
+    elif args.exp in ["FLSL", "centralized"]:
         train_transforms = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
@@ -144,7 +256,7 @@ def get_dataset(args):
     train_dataset = data(
         data_path, 
         train=True, 
-        transform=SimCLRTransformWrapper(train_transforms, args) if args.exp != "FL" else train_transforms, 
+        transform=SimCLRTransformWrapper(train_transforms, args) if args.exp in ["simclr", "simsiam"] else train_transforms, 
         download=True
     )
 

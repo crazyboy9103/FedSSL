@@ -64,14 +64,16 @@ class Trainer():
         return loss
     
     def train(self, q=None):
-        self.model.set_mode("train") # change to train mode (requires_grad = False for backbone if freeze=True)
-        
+        # change to train mode (requires_grad = False for backbone if freeze=True)
+        self.model.set_mode("train") 
+
+        # copy original model for fedprox regularization
+        global_model = copy.deepcopy(self.model)
         optimizer = self.optim_dict[self.args.optimizer](
             filter(lambda p: p.requires_grad, self.model.parameters()),
             self.args.lr
         )
 
-        # wandb_writer = None
         start = time.time()
         for epoch in range(self.local_epochs):
             # Metric
@@ -80,7 +82,7 @@ class Trainer():
             for batch_idx, (images, labels) in enumerate(self.train_loader):
                 optimizer.zero_grad()
             
-                if self.exp == "FL":
+                if self.exp == "FLSL" or self.exp == "centralized":
                     images = images.to(self.device, non_blocking=True)
                     labels = labels.to(self.device, non_blocking=True)
                     preds = self.model(images)
@@ -98,6 +100,19 @@ class Trainer():
                     p1, p2, z1, z2 = self.model(images[0], images[1]) 
                     loss = self.simsiam_loss(p1, p2, z1, z2)
 
+                if self.args.agg == "fedavg":
+                    pass
+                
+                elif self.args.agg == "fedprox":
+                    proximal_term = 0.0
+                    for w, w_t in zip(self.model.parameters(), global_model.parameters()):
+                        proximal_term += (w - w_t).norm(2)
+
+                    loss += (self.args.mu / 2) * proximal_term
+
+                elif self.args.agg == "fedmatch":
+                    pass
+
                 loss.backward()
                 optimizer.step()
                 
@@ -112,7 +127,7 @@ class Trainer():
             lr = optimizer.param_groups[0]['lr']
 
             if (epoch + 1) % 5 == 0:
-                # Test metrics
+                # Finetune to test the client's performance
                 _, test_loss, test_top1, test_top5 = self.test(finetune=True, epochs=1)
                 
                 end = time.time()
@@ -128,6 +143,7 @@ class Trainer():
                           time taken : {time_taken:.2f} """)
 
                 
+                # Return evaluation metrics and original model parameters
                 state_dict = {
                     "loss": test_loss, 
                     "top1": test_top1, 

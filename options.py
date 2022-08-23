@@ -32,7 +32,7 @@ def args_parser():
     parser.add_argument('--group_norm',       type=str2bool,  default=False,       help="group normalization")
     
     # Experimental setup
-    parser.add_argument("--exp",              type=str,       default="FL",      help="FL|simclr|simsiam")
+    parser.add_argument("--exp",              type=str,       default="FLSL",      choices=["simclr", "simsiam", "centralized", "FLSL"])
     parser.add_argument("--wandb_tag",        type=str,       default="",        help="optional tag for wandb logging")
     parser.add_argument("--alpha",            type=float,     default=0.5,       help="dirichlet param 0<alpha<infty controls iidness alpha=0:non iid")
     
@@ -63,6 +63,9 @@ def args_parser():
     parser.add_argument('--dataset',        type=str,       default='cifar',  choices=["mnist", "cifar"],              help="mnist|cifar")
     parser.add_argument('--optimizer',      type=str,       default='adam',               help="type of optimizer")
     
+    # FedProx
+    parser.add_argument('--mu',             type=float,     default=0.01)
+
     # Train setting
     parser.add_argument("--parallel",       type=str2bool,  default=True,                help="parallel training with threads")
     parser.add_argument("--num_workers",    type=int,       default=8,                    help="num workers for dataloader")
@@ -74,7 +77,7 @@ def args_parser():
     parser.add_argument('--finetune_epoch', type=int,       default=1,                   help='finetune epochs at server')
     parser.add_argument('--finetune',       type=str2bool,  default=True,                 help="finetune at the server")
     parser.add_argument("--ckpt_criterion",  type=str,     default="loss", help="ckpt criterion loss|top1")
-    parser.add_argument("--agg",             type=str,     default="fedavg", choices=["fedavg", "fedprox", "fixmatch"])
+    parser.add_argument("--agg",             type=str,     default="fedavg", choices=["fedavg", "fedprox", "fedmatch"])
 
     args = parser.parse_args() 
     
@@ -85,11 +88,11 @@ def args_parser():
         args.finetune_epoch = 1
 
 
-    if args.exp == "lower" or args.exp == "FL":
-        get_lowerbound_opts(args, args.iid)
+    if args.exp == "FLSL":
+        get_FLSL_opts(args, args.iid)
 
-    elif args.exp == "upper":
-        get_upperbound_opts(args, args.iid)
+    elif args.exp == "centralized":
+        get_centralized_opts(args, args.iid)
     
     elif args.exp == "simclr":
         get_simclr_opts(args, args.iid)
@@ -101,8 +104,7 @@ def args_parser():
 
     return args
 
-def get_lowerbound_opts(args, iid = False):
-    args.exp = "FL"
+def get_centralized_opts(args, iid = False):
     if iid == True:
         args.alpha = 100000 # arbitrary large number for iid
 
@@ -113,11 +115,12 @@ def get_lowerbound_opts(args, iid = False):
     args.num_items = 300
     args.epochs  = 100
     args.frac = 0.1
-    args.local_ep = 10 
-    args.local_bs = 16    
+    args.local_ep = 10
+    args.local_bs = 16
+    args.finetune = False
+    args.freeze = False
 
-def get_upperbound_opts(args, iid = False):
-    args.exp = "FL"
+def get_FLSL_opts(args, iid = False):
     if iid == True:
         args.alpha = 100000
 
@@ -130,9 +133,11 @@ def get_upperbound_opts(args, iid = False):
     args.frac = 0.1
     args.local_ep = 10
     args.local_bs = 16
+    # aggregate only 
+    args.finetune = False
+    args.freeze = False
 
 def get_simclr_opts(args, iid = False):
-    args.exp = "simclr"
     if iid == True:
         args.alpha = 100000
     else:
@@ -144,9 +149,10 @@ def get_simclr_opts(args, iid = False):
     args.frac = 0.1
     args.local_ep = 10
     args.local_bs = 16
-
+    # aggregate and train linear at server (finetune) 
+    args.finetune = True
+    
 def get_simsiam_opts(args, iid = False):
-    args.exp = "simsiam"
     if iid == True:
         args.alpha = 100000
     else:
@@ -158,5 +164,5 @@ def get_simsiam_opts(args, iid = False):
     args.frac = 0.1
     args.local_ep = 10
     args.local_bs = 16
-
+    args.finetune = True
 

@@ -1,22 +1,22 @@
 #!/bin/bash
 
-#SBATCH --job-name=FL_iid_gn_fedprox
+#SBATCH --job-name=FLSL_noniid_bn_fedprox
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:2
 #SBATCH --time=0-12:00:00
 #SBATCH --mem=64000MB
 #SBATCH --partition=3090,titan
 #SBATCH --cpus-per-task=64
-#SBATCH --output=/home/kwangyeongill/FedSSL_clean/scripts/slurm/FL_iid_gn_fedprox_%j.out
+#SBATCH --output=/home/kwangyeongill/FedSSL_clean/scripts/slurm/FLSL_noniid_bn_fedprox_%j.out
 
 eval "$(conda shell.bash hook)"
 conda activate FedSSL
 
-exp="FL"
-dist="iid"
-iid="True"
-norm="gn"
-gn="True"
+exp="FLSL"
+dist="noniid"
+iid="False"
+norm="bn"
+gn="False"
 agg="fedprox"
 
 wandb_tag="$exp"_"$dist"_"$norm"_"$agg"

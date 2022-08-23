@@ -1,0 +1,723 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.13.2 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220824_002318-20220824_002315
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run FLSL_iid_bn_fedavg
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220824_002315
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+[W CudaIPCTypes.cpp:92] Producer process tried to deallocate over 1000 memory blocks referred by consumer processes. Deallocation might be significantly slowed down. We assume it will never going to be the case, but if it is, please file but to https://github.com/pytorch/pytorch
+Client 9 Linear evaluating FLSL model
+Client 7 Linear evaluating FLSL model
+Client 58 Linear evaluating FLSL model
+Client 49 Linear evaluating FLSL model
+Client 67 Linear evaluating FLSL model
+Client 9 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.54%
+                          test acc/top5 : 87.84%
+                          test loss : 1.76
+                          train loss : 0.76 
+                          time taken : 239.14 
+Client 42 Linear evaluating FLSL model
+Client 53 Linear evaluating FLSL model
+Client 58 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.44%
+                          test acc/top5 : 86.82%
+                          test loss : 1.79
+                          train loss : 1.00 
+                          time taken : 236.44 
+Client 7 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.12%
+                          test acc/top5 : 86.36%
+                          test loss : 1.82
+                          train loss : 1.02 
+                          time taken : 250.93 
+Client 66 Linear evaluating FLSL model
+Client 26 Linear evaluating FLSL model
+Client 67 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.84%
+                          test acc/top5 : 87.20%
+                          test loss : 1.77
+                          train loss : 0.81 
+                          time taken : 238.22 
+Client 49 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.66%
+                          test acc/top5 : 87.56%
+                          test loss : 1.80
+                          train loss : 0.84 
+                          time taken : 252.37 
+Client 56 Linear evaluating FLSL model
+Client 53 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.68%
+                          test acc/top5 : 87.60%
+                          test loss : 1.76
+                          train loss : 0.87 
+                          time taken : 242.14 
+Client 42 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.72%
+                          test acc/top5 : 87.26%
+                          test loss : 1.75
+                          train loss : 0.95 
+                          time taken : 255.38 
+Client 26 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.16%
+                          test acc/top5 : 87.66%
+                          test loss : 1.76
+                          train loss : 1.06 
+                          time taken : 243.61 
+Client 66 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.08%
+                          test acc/top5 : 88.40%
+                          test loss : 1.77
+                          train loss : 0.71 
+                          time taken : 256.09 
+Client 56 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.52%
+                          test acc/top5 : 86.00%
+                          test loss : 1.83
+                          train loss : 0.87 
+                          time taken : 255.40 
+Client 9 Linear evaluating FLSL model
+Client 58 Linear evaluating FLSL model
+Client 7 Linear evaluating FLSL model
+Client 67 Linear evaluating FLSL model
+Client 49 Linear evaluating FLSL model
+Client 9 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.30%
+                          test acc/top5 : 87.88%
+                          test loss : 1.73
+                          train loss : 0.47 
+                          time taken : 243.64 
+Training complete best top1/top5: 37.30%/87.88%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 53 Linear evaluating FLSL model
+Client 58 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.06%
+                          test acc/top5 : 88.32%
+                          test loss : 1.72
+                          train loss : 0.54 
+                          time taken : 239.28 
+Training complete best top1/top5: 38.06%/88.32%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 42 Linear evaluating FLSL model
+Client 67 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.22%
+                          test acc/top5 : 88.34%
+                          test loss : 1.73
+                          train loss : 0.40 
+                          time taken : 240.31 
+Training complete best top1/top5: 37.22%/88.34%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 26 Linear evaluating FLSL model
+Client 7 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.24%
+                          test acc/top5 : 88.32%
+                          test loss : 1.76
+                          train loss : 0.55 
+                          time taken : 256.55 
+Training complete best top1/top5: 36.24%/88.32%
+Client 66 Linear evaluating FLSL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 49 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.12%
+                          test acc/top5 : 88.48%
+                          test loss : 1.69
+                          train loss : 0.42 
+                          time taken : 254.29 
+Training complete best top1/top5: 39.12%/88.48%
+Client 56 Linear evaluating FLSL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 53 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.40%
+                          test acc/top5 : 87.30%
+                          test loss : 1.76
+                          train loss : 0.54 
+                          time taken : 241.38 
+Training complete best top1/top5: 36.40%/87.30%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 42 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.58%
+                          test acc/top5 : 88.04%
+                          test loss : 1.74
+                          train loss : 0.49 
+                          time taken : 255.39 
+Training complete best top1/top5: 37.58%/88.04%
+Client 26 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.26%
+                          test acc/top5 : 89.70%
+                          test loss : 1.69
+                          train loss : 0.41 
+                          time taken : 241.93 
+Training complete best top1/top5: 38.26%/89.70%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 66 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.74%
+                          test acc/top5 : 87.26%
+                          test loss : 1.86
+                          train loss : 0.49 
+                          time taken : 254.25 
+Training complete best top1/top5: 35.74%/87.26%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 56 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.30%
+                          test acc/top5 : 87.78%
+                          test loss : 1.76
+                          train loss : 0.31 
+                          time taken : 252.13 
+Training complete best top1/top5: 36.30%/87.78%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+0 summary
+1 summary
+2 summary
+3 summary
+4 summary
+5 summary
+6 summary
+7 summary
+8 summary
+9 summary
+l2norm 0.7839681506156921
+l2norm 0.08514879643917084
+l2norm 1.6786750555038452
+l2norm 0.0702255517244339
+l2norm 1.8355928659439087
+l2norm 0.08954883366823196
+l2norm 1.84951651096344
+l2norm 0.08422350883483887
+l2norm 1.8915265798568726
+l2norm 0.07601824402809143
+l2norm 2.642301321029663
+l2norm 0.12718889117240906
+l2norm 3.8491058349609375
+l2norm 0.12993288040161133
+l2norm 0.9373677372932434
+l2norm 0.14136584103107452
+l2norm 3.81577730178833
+l2norm 0.11220525205135345
+l2norm 3.7274017333984375
+l2norm 0.11698688566684723
+l2norm 4.71594762802124
+l2norm 0.15792904794216156
+l2norm 6.309171676635742
+l2norm 0.15271644294261932
+l2norm 1.8395740985870361
+l2norm 0.17137935757637024
+l2norm 5.842766284942627
+l2norm 0.12745819985866547
+l2norm 5.900747776031494
+l2norm 0.1385091096162796
+l2norm 6.20890998840332
+l2norm 0.21427412331104279
+l2norm 4.54207706451416
+l2norm 0.20382778346538544
+l2norm 3.246339797973633
+l2norm 0.19654303789138794
+l2norm 4.354912757873535
+l2norm 0.1901390105485916
+l2norm 4.207447052001953
+l2norm 0.3216975927352905
+l2norm 0.506980836391449
+73.59342644363642
+l2norm 0.7970424294471741
+l2norm 0.11042427271604538
+l2norm 1.7949559688568115
+l2norm 0.086598239839077
+l2norm 1.9737732410430908
+l2norm 0.08959642052650452
+l2norm 1.9631518125534058
+l2norm 0.09873390197753906
+l2norm 2.0616564750671387
+l2norm 0.08788362890481949
+l2norm 2.8136799335479736
+l2norm 0.13595636188983917
+l2norm 4.096644401550293
+l2norm 0.13089589774608612
+l2norm 1.0152490139007568
+l2norm 0.1401481032371521
+l2norm 4.08563232421875
+l2norm 0.12963013350963593
+l2norm 3.9894022941589355
+l2norm 0.14973889291286469
+l2norm 5.099421977996826
+l2norm 0.17307370901107788
+l2norm 6.596990585327148
+l2norm 0.15310853719711304
+l2norm 1.9294095039367676
+l2norm 0.18393735587596893
+l2norm 6.003209114074707
+l2norm 0.12598645687103271
+l2norm 6.0067315101623535
+l2norm 0.15569506585597992
+l2norm 6.340273857116699
+l2norm 0.2267361432313919
+l2norm 4.622981548309326
+l2norm 0.22872434556484222
+l2norm 3.4834401607513428
+l2norm 0.20821376144886017
+l2norm 4.377653121948242
+l2norm 0.21867044270038605
+l2norm 4.285060882568359
+l2norm 0.28719425201416016
+l2norm 0.5089438557624817
+76.96624993532896
+l2norm 0.8269909620285034
+l2norm 0.08629564940929413
+l2norm 1.7798162698745728
+l2norm 0.07324299961328506
+l2norm 1.9286226034164429
+l2norm 0.08074506372213364
+l2norm 1.9552301168441772
+l2norm 0.09534213691949844
+l2norm 2.004443407058716
+l2norm 0.10784473270177841
+l2norm 2.7242989540100098
+l2norm 0.12730133533477783
+l2norm 3.944923162460327
+l2norm 0.13308799266815186
+l2norm 1.0051088333129883
+l2norm 0.14114926755428314
+l2norm 4.0054731369018555
+l2norm 0.1241680309176445
+l2norm 3.923541307449341
+l2norm 0.12090592086315155
+l2norm 5.042923927307129
+l2norm 0.16773618757724762
+l2norm 6.606009483337402
+l2norm 0.14456962049007416
+l2norm 1.8978527784347534
+l2norm 0.20008136332035065
+l2norm 6.074799060821533
+l2norm 0.1204250380396843
+l2norm 6.059924602508545
+l2norm 0.170880988240242
+l2norm 6.340632915496826
+l2norm 0.23077932000160217
+l2norm 4.621176719665527
+l2norm 0.20541241765022278
+l2norm 3.4048478603363037
+l2norm 0.21553926169872284
+l2norm 4.3725056648254395
+l2norm 0.1969495713710785
+l2norm 4.275417804718018
+l2norm 0.330714613199234
+l2norm 0.49490177631378174
+76.36261285841465
+l2norm 0.8092722296714783
+l2norm 0.10435489565134048
+l2norm 1.8049792051315308
+l2norm 0.08751365542411804
+l2norm 1.9775952100753784
+l2norm 0.09212280064821243
+l2norm 1.9676487445831299
+l2norm 0.08767873048782349
+l2norm 2.0547215938568115
+l2norm 0.08889371901750565
+l2norm 2.8111705780029297
+l2norm 0.1251148283481598
+l2norm 4.084819793701172
+l2norm 0.1313929706811905
+l2norm 1.0273796319961548
+l2norm 0.14232216775417328
+l2norm 4.080808639526367
+l2norm 0.12910711765289307
+l2norm 3.9996321201324463
+l2norm 0.11796549707651138
+l2norm 5.134049892425537
+l2norm 0.1556818038225174
+l2norm 6.694828987121582
+l2norm 0.1583089679479599
+l2norm 1.9195804595947266
+l2norm 0.19627366960048676
+l2norm 6.052213668823242
+l2norm 0.1310095638036728
+l2norm 6.016336917877197
+l2norm 0.15618878602981567
+l2norm 6.376102924346924
+l2norm 0.22767335176467896
+l2norm 4.542459964752197
+l2norm 0.19668680429458618
+l2norm 3.4594013690948486
+l2norm 0.21835821866989136
+l2norm 4.334082126617432
+l2norm 0.20231372117996216
+l2norm 4.202293872833252
+l2norm 0.2731948792934418
+l2norm 0.5133991837501526
+76.88493326306343
+l2norm 0.7701573967933655
+l2norm 0.08279210329055786
+l2norm 1.7148730754852295
+l2norm 0.08279999345541
+l2norm 1.8542919158935547
+l2norm 0.06801493465900421
+l2norm 1.8744854927062988
+l2norm 0.07259394973516464
+l2norm 1.908808708190918
+l2norm 0.08702801913022995
+l2norm 2.6602210998535156
+l2norm 0.12019262462854385
+l2norm 3.846921920776367
+l2norm 0.11312416195869446
+l2norm 0.9358428120613098
+l2norm 0.12404567748308182
+l2norm 3.8944153785705566
+l2norm 0.11799979209899902
+l2norm 3.7783069610595703
+l2norm 0.11590982973575592
+l2norm 4.821872234344482
+l2norm 0.13392645120620728
+l2norm 6.421022415161133
+l2norm 0.1488509476184845
+l2norm 1.8540699481964111
+l2norm 0.16977699100971222
+l2norm 5.851016998291016
+l2norm 0.11395567655563354
+l2norm 5.813407897949219
+l2norm 0.14490671455860138
+l2norm 6.3085150718688965
+l2norm 0.23492084443569183
+l2norm 4.6148457527160645
+l2norm 0.20658159255981445
+l2norm 3.2590677738189697
+l2norm 0.21080318093299866
+l2norm 4.4438886642456055
+l2norm 0.2024286389350891
+l2norm 4.266347885131836
+l2norm 0.2934163212776184
+l2norm 0.518340528011322
+74.25478837639093
+l2norm 0.7715297341346741
+l2norm 0.09477159380912781
+l2norm 1.7738537788391113
+l2norm 0.07878917455673218
+l2norm 1.9153465032577515
+l2norm 0.11006171256303787
+l2norm 1.96486496925354
+l2norm 0.08966671675443649
+l2norm 1.9749500751495361
+l2norm 0.09427231550216675
+l2norm 2.7591254711151123
+l2norm 0.12269715219736099
+l2norm 4.001505374908447
+l2norm 0.14054247736930847
+l2norm 0.9977024793624878
+l2norm 0.1499233990907669
+l2norm 4.072956562042236
+l2norm 0.12786708772182465
+l2norm 3.9571831226348877
+l2norm 0.128771111369133
+l2norm 4.993268966674805
+l2norm 0.1480451226234436
+l2norm 6.580341815948486
+l2norm 0.15442007780075073
+l2norm 1.9467116594314575
+l2norm 0.19722320139408112
+l2norm 6.054176330566406
+l2norm 0.12905184924602509
+l2norm 6.0366668701171875
+l2norm 0.15111654996871948
+l2norm 6.3650336265563965
+l2norm 0.2438100278377533
+l2norm 4.6230010986328125
+l2norm 0.2029496133327484
+l2norm 3.4198524951934814
+l2norm 0.2212238907814026
+l2norm 4.392053604125977
+l2norm 0.2076755315065384
+l2norm 4.270898818969727
+l2norm 0.2678576707839966
+l2norm 0.5122880339622498
+76.44404766708612
+l2norm 0.8115171194076538
+l2norm 0.10285608470439911
+l2norm 1.7769695520401
+l2norm 0.09112780541181564
+l2norm 1.9518167972564697
+l2norm 0.08290141075849533
+l2norm 1.9504529237747192
+l2norm 0.08916220813989639
+l2norm 2.0211312770843506
+l2norm 0.07348047196865082
+l2norm 2.747309923171997
+l2norm 0.111473448574543
+l2norm 4.038000583648682
+l2norm 0.13013039529323578
+l2norm 0.976767897605896
+l2norm 0.15267999470233917
+l2norm 4.0741376876831055
+l2norm 0.12777292728424072
+l2norm 3.9288322925567627
+l2norm 0.14867068827152252
+l2norm 5.040485382080078
+l2norm 0.1622704118490219
+l2norm 6.639431953430176
+l2norm 0.1492430418729782
+l2norm 1.924496054649353
+l2norm 0.18924632668495178
+l2norm 6.013997554779053
+l2norm 0.11730579286813736
+l2norm 5.998889446258545
+l2norm 0.15875636041164398
+l2norm 6.404630661010742
+l2norm 0.2328195869922638
+l2norm 4.618813514709473
+l2norm 0.20826762914657593
+l2norm 3.4087700843811035
+l2norm 0.2165379524230957
+l2norm 4.382330417633057
+l2norm 0.19778543710708618
+l2norm 4.235960483551025
+l2norm 0.27504390478134155
+l2norm 0.5141268968582153
+76.47640038281679
+l2norm 0.8259117007255554
+l2norm 0.112159863114357
+l2norm 1.8837015628814697
+l2norm 0.09193196892738342
+l2norm 2.0608277320861816
+l2norm 0.08415006846189499
+l2norm 2.0613059997558594
+l2norm 0.08518551290035248
+l2norm 2.1356019973754883
+l2norm 0.10480044782161713
+l2norm 2.923845052719116
+l2norm 0.1411735713481903
+l2norm 4.220862865447998
+l2norm 0.14114221930503845
+l2norm 1.0443283319473267
+l2norm 0.1399468183517456
+l2norm 4.228166580200195
+l2norm 0.13341474533081055
+l2norm 4.087867259979248
+l2norm 0.15133808553218842
+l2norm 5.190462112426758
+l2norm 0.17204338312149048
+l2norm 6.765059947967529
+l2norm 0.16870495676994324
+l2norm 2.012861490249634
+l2norm 0.20637206733226776
+l2norm 6.215848445892334
+l2norm 0.12807530164718628
+l2norm 6.163832187652588
+l2norm 0.16870002448558807
+l2norm 6.597289562225342
+l2norm 0.2549387812614441
+l2norm 4.775571346282959
+l2norm 0.21409454941749573
+l2norm 3.5367515087127686
+l2norm 0.22356091439723969
+l2norm 4.499977111816406
+l2norm 0.20435944199562073
+l2norm 4.368790626525879
+l2norm 0.30237117409706116
+l2norm 0.5284903645515442
+79.3558176830411
+l2norm 0.8170926570892334
+l2norm 0.08313148468732834
+l2norm 1.7670680284500122
+l2norm 0.10232240706682205
+l2norm 1.9502092599868774
+l2norm 0.08360128849744797
+l2norm 1.9285190105438232
+l2norm 0.08527754992246628
+l2norm 2.003800868988037
+l2norm 0.09966998547315598
+l2norm 2.749999761581421
+l2norm 0.14491643011569977
+l2norm 3.9756052494049072
+l2norm 0.13370822370052338
+l2norm 0.9850220680236816
+l2norm 0.14669543504714966
+l2norm 4.009909629821777
+l2norm 0.13271529972553253
+l2norm 3.9077155590057373
+l2norm 0.12760169804096222
+l2norm 5.012476444244385
+l2norm 0.15721149742603302
+l2norm 6.58043098449707
+l2norm 0.16155359148979187
+l2norm 1.8956698179244995
+l2norm 0.19216397404670715
+l2norm 5.949069499969482
+l2norm 0.11801028251647949
+l2norm 6.004087924957275
+l2norm 0.15486179292201996
+l2norm 6.408844947814941
+l2norm 0.22686627507209778
+l2norm 4.653193950653076
+l2norm 0.2080020308494568
+l2norm 3.380910634994507
+l2norm 0.2259494811296463
+l2norm 4.421748638153076
+l2norm 0.20525187253952026
+l2norm 4.250572204589844
+l2norm 0.29634299874305725
+l2norm 0.49969372153282166
+76.23749446123838
+l2norm 0.7792931795120239
+l2norm 0.10146556049585342
+l2norm 1.773200511932373
+l2norm 0.07927393913269043
+l2norm 1.948280692100525
+l2norm 0.08614712208509445
+l2norm 1.941078543663025
+l2norm 0.09126453846693039
+l2norm 1.9896600246429443
+l2norm 0.09268409013748169
+l2norm 2.729055404663086
+l2norm 0.13275142014026642
+l2norm 3.94912052154541
+l2norm 0.12055882811546326
+l2norm 0.9689266681671143
+l2norm 0.13386012613773346
+l2norm 3.944765329360962
+l2norm 0.13156887888908386
+l2norm 3.8771708011627197
+l2norm 0.13609571754932404
+l2norm 4.9235100746154785
+l2norm 0.158084899187088
+l2norm 6.530289173126221
+l2norm 0.15194763243198395
+l2norm 1.9026700258255005
+l2norm 0.20018543303012848
+l2norm 6.046916484832764
+l2norm 0.12063469737768173
+l2norm 6.024487495422363
+l2norm 0.15416307747364044
+l2norm 6.291187286376953
+l2norm 0.2177983522415161
+l2norm 4.579562664031982
+l2norm 0.20266348123550415
+l2norm 3.419550657272339
+l2norm 0.22234737873077393
+l2norm 4.383552551269531
+l2norm 0.20595495402812958
+l2norm 4.254589557647705
+l2norm 0.2789390981197357
+l2norm 0.4924330413341522
+75.76768991351128
+(10, 41)
+means [0.024390243902439025, 0.02439024390243903, 0.024390243902439025, 0.024390243902439025, 0.02439024390243903, 0.024390243902439025, 0.024390243902439025, 0.024390243902439025, 0.024390243902439022, 0.024390243902439025]
+Client -1 Linear evaluating FLSL model
+#######################################################
+ 
+Avg Validation Stats after 1 global rounds
+Validation Loss     : 2.06
+Validation Accuracy : top1/top5 27.93%/80.30%
+
+#######################################################
+model saved at ./checkpoints/FLSL_iid_bn_fedavg.pth.tar
+
+ | Global Training Round : 2 |
+
+Client 10 Linear evaluating FLSL model
+Client 11 Linear evaluating FLSL model
+Client 57 Linear evaluating FLSL model
+Client 27 Linear evaluating FLSL model
+Client 75 Linear evaluating FLSL model
+Client 10 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.58%
+                          test acc/top5 : 87.68%
+                          test loss : 1.77
+                          train loss : 0.55 
+                          time taken : 235.25 
+Client 93 Linear evaluating FLSL model
+Client 66 Linear evaluating FLSL model
+Client 57 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.46%
+                          test acc/top5 : 87.98%
+                          test loss : 1.74
+                          train loss : 0.57 
+                          time taken : 236.44 
+Client 11 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.18%
+                          test acc/top5 : 88.20%
+                          test loss : 1.78
+                          train loss : 0.83 
+                          time taken : 249.31 
+Client 81 Linear evaluating FLSL model
+Client 21 Linear evaluating FLSL model
+Client 75 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.68%
+                          test acc/top5 : 88.16%
+                          test loss : 1.70
+                          train loss : 0.48 
+                          time taken : 237.60 
+Client 27 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.96%
+                          test acc/top5 : 89.14%
+                          test loss : 1.68
+                          train loss : 0.79 
+                          time taken : 252.75 
+Client 3 Linear evaluating FLSL model
+Client 66 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.64%
+                          test acc/top5 : 87.56%
+                          test loss : 1.76
+                          train loss : 0.58 
+                          time taken : 236.16 
+Client 93 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.42%
+                          test acc/top5 : 88.46%
+                          test loss : 1.74
+                          train loss : 0.50 
+                          time taken : 253.36 
+Client 21 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.86%
+                          test acc/top5 : 87.32%
+                          test loss : 1.76
+                          train loss : 0.64 
+                          time taken : 239.91 
+Client 81 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.44%
+                          test acc/top5 : 88.90%
+                          test loss : 1.71
+                          train loss : 0.63 
+                          time taken : 251.45 
+Client 3 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.10%
+                          test acc/top5 : 87.62%
+                          test loss : 1.76
+                          train loss : 0.58 
+                          time taken : 254.83 
+Client 10 Linear evaluating FLSL model
+Client 57 Linear evaluating FLSL model
+Client 11 Linear evaluating FLSL model
+slurmstepd: error: *** JOB 170459 ON a05 CANCELLED AT 2022-08-24T00:42:00 ***
