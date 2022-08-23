@@ -1,22 +1,22 @@
 #!/bin/bash
 
-#SBATCH --job-name=FL_iid_gn_fedavg
+#SBATCH --job-name=centralized_bn_fedavg
 #SBATCH --nodes=1
-#SBATCH --gres=gpu:2
+#SBATCH --gres=gpu:1
 #SBATCH --time=0-12:00:00
 #SBATCH --mem=64000MB
 #SBATCH --partition=3090,titan
-#SBATCH --cpus-per-task=64
-#SBATCH --output=/home/kwangyeongill/FedSSL_clean/scripts/slurm/FL_iid_gn_fedavg_%j.out
+#SBATCH --cpus-per-task=32
+#SBATCH --output=/home/kwangyeongill/FedSSL_clean/scripts/slurm/centralized_bn_fedavg_%j.out
 
 eval "$(conda shell.bash hook)"
 conda activate FedSSL
 
-exp="FL"
+exp="centralized"
 dist="iid"
 iid="True"
-norm="gn"
-gn="True"
+norm="bn"
+gn="False"
 agg="fedavg"
 
 wandb_tag="$exp"_"$dist"_"$norm"_"$agg"
