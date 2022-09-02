@@ -99,16 +99,17 @@ def get_length_gradients(local_weights_copy, global_model_copy):
         client_grad = []
         for key, weight in global_state_dict.items():
             if "weight" in key:
-                l2_norm = torch.linalg.norm(state_dict[key].cpu() - weight.cpu()).detach().item()
-                client_grad.append(l2_norm)
-                print("l2norm", l2_norm)
-        grad_sum = sum(client_grad)
-        print(grad_sum)
-        client_grad = [grad / grad_sum for grad in client_grad] # normalize
+                with torch.no_grad():
+                    l2_norm = torch.linalg.norm(state_dict[key].cpu() - weight.cpu()).detach().item()
+                    client_grad.append(l2_norm)
+                # print("l2norm", l2_norm)
+        # grad_sum = sum(client_grad)
+        # print(grad_sum)
+        # client_grad = [grad / grad_sum for grad in client_grad] # normalize
         grads.append(client_grad)
-    print(np.array(grads).shape)
+    # print(np.array(grads).shape)
     means = np.array(grads).T.mean(1).tolist()
-    print("means", means)
+    # print("means", means)
     return means
 
 

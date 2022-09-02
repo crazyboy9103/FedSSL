@@ -1,0 +1,277 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.13.2 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220830_014054-20220830_014052
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run simsiam_noniid_bn_fedavg
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220830_014052
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+[W CudaIPCTypes.cpp:92] Producer process tried to deallocate over 1000 memory blocks referred by consumer processes. Deallocation might be significantly slowed down. We assume it will never going to be the case, but if it is, please file but to https://github.com/pytorch/pytorch
+Client 92 Linear evaluating simsiam model
+Client 69 Linear evaluating simsiam model
+Client 98 Linear evaluating simsiam model
+Client 91 Linear evaluating simsiam model
+Client 94 Linear evaluating simsiam model
+Client 85 Linear evaluating simsiam model
+Client 92 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.88%
+                          test acc/top5 : 82.33%
+                          test loss : 1.98
+                          train loss : -0.82 
+                          time taken : 198.27 
+Client 69 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 27.64%
+                          test acc/top5 : 81.63%
+                          test loss : 2.00
+                          train loss : -0.84 
+                          time taken : 195.83 
+Client 54 Linear evaluating simsiam model
+Client 98 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 25.24%
+                          test acc/top5 : 80.75%
+                          test loss : 2.02
+                          train loss : -0.76 
+                          time taken : 194.94 
+Client 45 Linear evaluating simsiam model
+Client 91 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 24.44%
+                          test acc/top5 : 80.81%
+                          test loss : 1.99
+                          train loss : -0.88 
+                          time taken : 198.71 
+Client 94 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.89%
+                          test acc/top5 : 80.91%
+                          test loss : 2.13
+                          train loss : -0.84 
+                          time taken : 195.59 
+Client 79 Linear evaluating simsiam model
+Client 52 Linear evaluating simsiam model
+Client 85 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 22.34%
+                          test acc/top5 : 78.69%
+                          test loss : 2.17
+                          train loss : -0.84 
+                          time taken : 200.03 
+Client 54 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 22.20%
+                          test acc/top5 : 80.83%
+                          test loss : 1.99
+                          train loss : -0.78 
+                          time taken : 200.69 
+Client 45 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 19.23%
+                          test acc/top5 : 78.59%
+                          test loss : 2.13
+                          train loss : -0.86 
+                          time taken : 203.22 
+Client 79 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 19.43%
+                          test acc/top5 : 79.49%
+                          test loss : 2.10
+                          train loss : -0.77 
+                          time taken : 203.02 
+Client 52 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 24.62%
+                          test acc/top5 : 77.66%
+                          test loss : 2.04
+                          train loss : -0.82 
+                          time taken : 201.87 
+Client 92 Linear evaluating simsiam model
+Client 69 Linear evaluating simsiam model
+Client 98 Linear evaluating simsiam model
+Client 91 Linear evaluating simsiam model
+Client 94 Linear evaluating simsiam model
+Client 92 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.55%
+                          test acc/top5 : 81.25%
+                          test loss : 2.13
+                          train loss : -0.93 
+                          time taken : 199.46 
+Training complete best top1/top5: 21.55%/81.25%
+Client 85 Linear evaluating simsiam model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 69 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 20.01%
+                          test acc/top5 : 79.45%
+                          test loss : 2.12
+                          train loss : -0.94 
+                          time taken : 199.16 
+Training complete best top1/top5: 20.01%/79.45%
+Client 54 Linear evaluating simsiam model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 98 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 22.16%
+                          test acc/top5 : 80.93%
+                          test loss : 2.11
+                          train loss : -0.86 
+                          time taken : 198.38 
+Training complete best top1/top5: 22.16%/80.93%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 45 Linear evaluating simsiam model
+Client 91 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 16.45%
+                          test acc/top5 : 72.06%
+                          test loss : 2.22
+                          train loss : -0.87 
+                          time taken : 197.91 
+Training complete best top1/top5: 16.45%/72.06%
+Client 94 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 24.34%
+                          test acc/top5 : 77.72%
+                          test loss : 2.06
+                          train loss : -0.90 
+                          time taken : 197.62 
+Training complete best top1/top5: 24.34%/77.72%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 79 Linear evaluating simsiam model
+Client 52 Linear evaluating simsiam model
+Client 85 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.53%
+                          test acc/top5 : 77.52%
+                          test loss : 2.18
+                          train loss : -0.90 
+                          time taken : 196.58 
+Training complete best top1/top5: 21.53%/77.52%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 54 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 17.67%
+                          test acc/top5 : 78.77%
+                          test loss : 2.13
+                          train loss : -0.84 
+                          time taken : 195.08 
+Training complete best top1/top5: 17.67%/78.77%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 45 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 19.09%
+                          test acc/top5 : 75.14%
+                          test loss : 2.19
+                          train loss : -0.91 
+                          time taken : 194.18 
+Training complete best top1/top5: 19.09%/75.14%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 79 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 18.51%
+                          test acc/top5 : 78.57%
+                          test loss : 2.15
+                          train loss : -0.84 
+                          time taken : 193.26 
+Training complete best top1/top5: 18.51%/78.57%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 52 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 21.43%
+                          test acc/top5 : 74.52%
+                          test loss : 2.15
+                          train loss : -0.89 
+                          time taken : 192.31 
+Training complete best top1/top5: 21.43%/74.52%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+0 summary
+1 summary
+2 summary
+3 summary
+4 summary
+5 summary
+6 summary
+7 summary
+8 summary
+9 summary
+Client -1 Linear evaluating simsiam model
+#######################################################
+ 
+Avg Validation Stats after 1 global rounds
+Validation Loss     : 1.84
+Validation Accuracy : top1/top5 30.99%/85.38%
+
+#######################################################
+model saved at ./checkpoints/simsiam_noniid_bn_fedavg.pth.tar
+
+ | Global Training Round : 2 |
+
+Client 9 Linear evaluating simsiam model
+Client 18 Linear evaluating simsiam model
+Client 74 Linear evaluating simsiam model
+Client 23 Linear evaluating simsiam model
+Client 52 Linear evaluating simsiam model
+Client 9 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.72%
+                          test acc/top5 : 83.05%
+                          test loss : 1.94
+                          train loss : -0.84 
+                          time taken : 187.72 
+Client 84 Linear evaluating simsiam model
+Client 18 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.60%
+                          test acc/top5 : 84.03%
+                          test loss : 1.92
+                          train loss : -0.73 
+                          time taken : 189.86 
+Client 85 Linear evaluating simsiam model
+Client 74 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 27.40%
+                          test acc/top5 : 83.13%
+                          test loss : 1.97
+                          train loss : -0.59 
+                          time taken : 190.24 
+Client 54 Linear evaluating simsiam model
+Client 23 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 22.16%
+                          test acc/top5 : 82.33%
+                          test loss : 2.00
+                          train loss : -0.76 
+                          time taken : 191.73 
+Client 48 Linear evaluating simsiam model
+Client 52 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 25.10%
+                          test acc/top5 : 79.51%
+                          test loss : 2.11
+                          train loss : -0.53 
+                          time taken : 193.45 
+Client 93 Linear evaluating simsiam model
+Client 84 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 24.20%
+                          test acc/top5 : 80.73%
+                          test loss : 1.99
+                          train loss : -0.65 
+                          time taken : 195.56 
+Client 85 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 22.96%
+                          test acc/top5 : 80.69%
+                          test loss : 2.11
+                          train loss : -0.53 
+                          time taken : 194.90 
+slurmstepd: error: *** JOB 171623 ON b03 CANCELLED AT 2022-08-30T01:53:45 ***

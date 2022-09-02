@@ -1,0 +1,64 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.13.2 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220830_020226-20220830_020224
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run centralized_noniid_bn_fedprox
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220830_020224
+Files already downloaded and verified
+Files already downloaded and verified
+Client 52 Linear evaluating centralized model
+Client 52 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 43.75%
+                          test acc/top5 : 89.96%
+                          test loss : 1.61
+                          train loss : 1.85 
+                          time taken : 249.08 
+Client 52 Linear evaluating centralized model
+Client 52 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 48.92%
+                          test acc/top5 : 91.69%
+                          test loss : 1.49
+                          train loss : 1.61 
+                          time taken : 229.00 
+Training complete best top1/top5: 48.92%/91.69%
+Client -1 Linear evaluating centralized model
+#######################################################
+ 
+Avg Validation Stats after 1 global rounds
+Validation Loss     : 1.84
+Validation Accuracy : top1/top5 44.29%/89.11%
+
+#######################################################
+model saved at ./checkpoints/centralized_noniid_bn_fedprox.pth.tar
+Client 93 Linear evaluating centralized model
+Client 93 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 52.18%
+                          test acc/top5 : 93.43%
+                          test loss : 1.38
+                          train loss : 1.27 
+                          time taken : 236.04 
+Client 93 Linear evaluating centralized model
+Client 93 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 53.87%
+                          test acc/top5 : 93.21%
+                          test loss : 1.35
+                          train loss : 1.02 
+                          time taken : 245.16 
+Training complete best top1/top5: 53.87%/93.21%
+Client -1 Linear evaluating centralized model
+#######################################################
+ 
+Avg Validation Stats after 2 global rounds
+Validation Loss     : 2.39
+Validation Accuracy : top1/top5 48.11%/88.97%
+
+#######################################################
+model saved at ./checkpoints/centralized_noniid_bn_fedprox.pth.tar
+slurmstepd: error: *** JOB 171637 ON b05 CANCELLED AT 2022-08-30T02:20:48 ***

@@ -1,0 +1,445 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.13.2 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220830_020020-20220830_020014
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run FLSL_noniid_bn_fedprox
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220830_020014
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+[W CudaIPCTypes.cpp:92] Producer process tried to deallocate over 1000 memory blocks referred by consumer processes. Deallocation might be significantly slowed down. We assume it will never going to be the case, but if it is, please file but to https://github.com/pytorch/pytorch
+Client 38 Linear evaluating FLSL model
+Client 43 Linear evaluating FLSL model
+Client 8 Linear evaluating FLSL model
+Client 95 Linear evaluating FLSL model
+Client 70 Linear evaluating FLSL model
+Client 47 Linear evaluating FLSL model
+Client 38 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 32.75%
+                          test acc/top5 : 85.24%
+                          test loss : 1.85
+                          train loss : 0.58 
+                          time taken : 227.69 
+Client 30 Linear evaluating FLSL model
+Client 43 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.17%
+                          test acc/top5 : 85.96%
+                          test loss : 1.89
+                          train loss : 0.74 
+                          time taken : 224.24 
+Client 86 Linear evaluating FLSL model
+Client 8 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.26%
+                          test acc/top5 : 87.58%
+                          test loss : 1.78
+                          train loss : 0.77 
+                          time taken : 220.99 
+Client 95 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 29.95%
+                          test acc/top5 : 86.56%
+                          test loss : 1.96
+                          train loss : 0.86 
+                          time taken : 213.63 
+Client 83 Linear evaluating FLSL model
+Client 32 Linear evaluating FLSL model
+Client 70 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.58%
+                          test acc/top5 : 87.24%
+                          test loss : 1.82
+                          train loss : 0.50 
+                          time taken : 225.41 
+Client 47 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.66%
+                          test acc/top5 : 86.88%
+                          test loss : 1.78
+                          train loss : 0.62 
+                          time taken : 218.80 
+Client 30 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 31.79%
+                          test acc/top5 : 86.54%
+                          test loss : 1.85
+                          train loss : 0.66 
+                          time taken : 227.85 
+Client 86 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.18%
+                          test acc/top5 : 86.02%
+                          test loss : 1.82
+                          train loss : 0.53 
+                          time taken : 222.16 
+Client 83 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 33.19%
+                          test acc/top5 : 85.58%
+                          test loss : 1.84
+                          train loss : 0.73 
+                          time taken : 225.99 
+Client 32 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 32.47%
+                          test acc/top5 : 87.60%
+                          test loss : 1.82
+                          train loss : 0.45 
+                          time taken : 217.34 
+Client 38 Linear evaluating FLSL model
+Client 43 Linear evaluating FLSL model
+Client 95 Linear evaluating FLSL model
+Client 8 Linear evaluating FLSL model
+Client 47 Linear evaluating FLSL model
+Client 70 Linear evaluating FLSL model
+Client 86 Linear evaluating FLSL model
+Client 30 Linear evaluating FLSL model
+Client 38 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 31.25%
+                          test acc/top5 : 84.07%
+                          test loss : 1.91
+                          train loss : 0.47 
+                          time taken : 234.81 
+Training complete best top1/top5: 31.25%/84.07%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 95 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 32.77%
+                          test acc/top5 : 85.08%
+                          test loss : 1.89
+                          train loss : 0.43 
+                          time taken : 223.95 
+Training complete best top1/top5: 32.77%/85.08%
+Client 43 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.42%
+                          test acc/top5 : 87.80%
+                          test loss : 1.76
+                          train loss : 0.73 
+                          time taken : 232.79 
+Training complete best top1/top5: 36.42%/87.80%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 8 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.50%
+                          test acc/top5 : 86.04%
+                          test loss : 1.82
+                          train loss : 0.52 
+                          time taken : 235.53 
+Training complete best top1/top5: 35.50%/86.04%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 83 Linear evaluating FLSL model
+Client 32 Linear evaluating FLSL model
+Client 47 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.15%
+                          test acc/top5 : 87.16%
+                          test loss : 1.85
+                          train loss : 0.51 
+                          time taken : 219.28 
+Training complete best top1/top5: 34.15%/87.16%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 70 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 33.57%
+                          test acc/top5 : 87.46%
+                          test loss : 1.81
+                          train loss : 0.53 
+                          time taken : 227.37 
+Training complete best top1/top5: 33.57%/87.46%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 86 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.82%
+                          test acc/top5 : 88.70%
+                          test loss : 1.78
+                          train loss : 0.44 
+                          time taken : 214.96 
+Training complete best top1/top5: 35.82%/88.70%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 30 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.76%
+                          test acc/top5 : 85.42%
+                          test loss : 1.82
+                          train loss : 0.51 
+                          time taken : 226.76 
+Training complete best top1/top5: 34.76%/85.42%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 83 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.84%
+                          test acc/top5 : 85.48%
+                          test loss : 1.85
+                          train loss : 0.49 
+                          time taken : 217.91 
+Training complete best top1/top5: 34.84%/85.48%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 32 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.30%
+                          test acc/top5 : 88.32%
+                          test loss : 1.79
+                          train loss : 0.46 
+                          time taken : 213.87 
+Training complete best top1/top5: 35.30%/88.32%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+0 summary
+1 summary
+2 summary
+3 summary
+4 summary
+5 summary
+6 summary
+7 summary
+8 summary
+9 summary
+Client -1 Linear evaluating FLSL model
+#######################################################
+ 
+Avg Validation Stats after 1 global rounds
+Validation Loss     : 3.25
+Validation Accuracy : top1/top5 14.49%/61.39%
+
+#######################################################
+model saved at ./checkpoints/FLSL_noniid_bn_fedprox.pth.tar
+
+ | Global Training Round : 2 |
+
+Client 96 Linear evaluating FLSL model
+Client 67 Linear evaluating FLSL model
+Client 2 Linear evaluating FLSL model
+Client 64 Linear evaluating FLSL model
+Client 78 Linear evaluating FLSL model
+Client 89 Linear evaluating FLSL model
+Client 96 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 33.55%
+                          test acc/top5 : 88.14%
+                          test loss : 1.82
+                          train loss : 0.44 
+                          time taken : 212.49 
+Client 45 Linear evaluating FLSL model
+Client 67 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.72%
+                          test acc/top5 : 88.26%
+                          test loss : 1.72
+                          train loss : 0.54 
+                          time taken : 216.91 
+Client 22 Linear evaluating FLSL model
+Client 2 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 33.41%
+                          test acc/top5 : 87.02%
+                          test loss : 1.83
+                          train loss : 0.53 
+                          time taken : 214.73 
+Client 6 Linear evaluating FLSL model
+Client 64 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 32.97%
+                          test acc/top5 : 84.54%
+                          test loss : 1.91
+                          train loss : 0.42 
+                          time taken : 211.39 
+Client 30 Linear evaluating FLSL model
+Client 89 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.40%
+                          test acc/top5 : 88.46%
+                          test loss : 1.75
+                          train loss : 0.65 
+                          time taken : 204.09 
+Client 78 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 32.53%
+                          test acc/top5 : 85.04%
+                          test loss : 1.88
+                          train loss : 0.32 
+                          time taken : 213.56 
+Client 45 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.90%
+                          test acc/top5 : 86.48%
+                          test loss : 1.80
+                          train loss : 0.67 
+                          time taken : 201.40 
+Client 22 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.62%
+                          test acc/top5 : 86.74%
+                          test loss : 1.82
+                          train loss : 0.46 
+                          time taken : 217.62 
+Client 6 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.01%
+                          test acc/top5 : 86.92%
+                          test loss : 1.82
+                          train loss : 0.40 
+                          time taken : 214.72 
+Client 30 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.44%
+                          test acc/top5 : 87.16%
+                          test loss : 1.78
+                          train loss : 0.62 
+                          time taken : 219.08 
+Client 96 Linear evaluating FLSL model
+Client 67 Linear evaluating FLSL model
+Client 2 Linear evaluating FLSL model
+Client 89 Linear evaluating FLSL model
+Client 64 Linear evaluating FLSL model
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    prepare(preparation_data)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    main_content = runpy.run_path(main_path,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 268, in run_path
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    main_content = runpy.run_path(main_path,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 268, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 87, in _run_code
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    return _run_module_code(code, init_globals, run_name,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 97, in _run_module_code
+    exec(code, run_globals)
+  File "/home/kwangyeongill/FedSSL_clean/main.py", line 15, in <module>
+    _run_code(code, mod_globals, init_globals,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 87, in _run_code
+    prepare(preparation_data)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    from trainers import Trainer
+ImportError: cannot import name 'Trainer' from 'trainers' (/home/kwangyeongill/FedSSL_clean/trainers.py)
+    exec(code, run_globals)
+  File "/home/kwangyeongill/FedSSL_clean/main.py", line 15, in <module>
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    from trainers import Trainer
+ImportError: cannot import name 'Trainer' from 'trainers' (/home/kwangyeongill/FedSSL_clean/trainers.py)
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+Traceback (most recent call last):
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+  File "<string>", line 1, in <module>
+    main_content = runpy.run_path(main_path,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 268, in run_path
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 268, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 97, in _run_module_code
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    return _run_module_code(code, init_globals, run_name,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 87, in _run_code
+    _run_code(code, mod_globals, init_globals,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 87, in _run_code
+    prepare(preparation_data)
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    exec(code, run_globals)
+  File "/home/kwangyeongill/FedSSL_clean/main.py", line 15, in <module>
+    exec(code, run_globals)
+    from trainers import Trainer
+  File "/home/kwangyeongill/FedSSL_clean/main.py", line 15, in <module>
+ImportError: cannot import name 'Trainer' from 'trainers' (/home/kwangyeongill/FedSSL_clean/trainers.py)
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    from trainers import Trainer
+ImportError: cannot import name 'Trainer' from 'trainers' (/home/kwangyeongill/FedSSL_clean/trainers.py)
+    main_content = runpy.run_path(main_path,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 268, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/home/kwangyeongill/anaconda/envs/FedSSL/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/kwangyeongill/FedSSL_clean/main.py", line 15, in <module>
+    from trainers import Trainer
+ImportError: cannot import name 'Trainer' from 'trainers' (/home/kwangyeongill/FedSSL_clean/trainers.py)
+Client 78 Linear evaluating FLSL model
+Client 67 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.30%
+                          test acc/top5 : 87.70%
+                          test loss : 1.76
+                          train loss : 0.52 
+                          time taken : 236.00 
+Training complete best top1/top5: 36.30%/87.70%
+Client 2 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.35%
+                          test acc/top5 : 87.60%
+                          test loss : 1.78
+                          train loss : 0.46 
+                          time taken : 232.28 
+Training complete best top1/top5: 34.35%/87.60%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 89 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.23%
+                          test acc/top5 : 87.76%
+                          test loss : 1.88
+                          train loss : 0.48 
+                          time taken : 213.96 
+Training complete best top1/top5: 34.23%/87.76%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 78 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.44%
+                          test acc/top5 : 87.24%
+                          test loss : 1.81
+                          train loss : 0.31 
+                          time taken : 223.27 
+Training complete best top1/top5: 35.44%/87.24%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 30 Linear evaluating FLSL model
+Client 30 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.52%
+                          test acc/top5 : 87.48%
+                          test loss : 1.76
+                          train loss : 0.46 
+                          time taken : 215.90 
+Training complete best top1/top5: 36.52%/87.48%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+slurmstepd: error: *** JOB 171631 ON b05 CANCELLED AT 2022-08-30T02:20:48 ***

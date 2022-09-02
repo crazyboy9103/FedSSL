@@ -26,8 +26,7 @@ if __name__ == '__main__':
         reinit = True,
         name = now if args.wandb_tag == "" else args.wandb_tag,
         project = "Fed", 
-        save_code = True, 
-        resume = "allow",
+        resume = "never",
         id = now
     )
 
@@ -157,6 +156,7 @@ if __name__ == '__main__':
             
             for i in range(num_clients_part):
                 wandb_writer.log({
+                    "epoch": epoch,
                     f"train_loss_cli_{i}": local_train_losses[i], 
                     f"test_loss_cli_{i}": local_losses[i], 
                     f"top1_cli_{i}": local_top1s[i], 
@@ -164,6 +164,7 @@ if __name__ == '__main__':
                 })
 
             # random noise through each client's parameter 
+            # output representation pairwise similarity
             embed_vectors = feed_noise_to_models(local_weights_copy = copy.deepcopy(local_weights), global_model_copy = copy.deepcopy(global_model), batch_size = args.local_bs)
             sims = []
             for i in range(len(embed_vectors)):
@@ -171,7 +172,6 @@ if __name__ == '__main__':
                     vector_i, vector_j = embed_vectors[i].unsqueeze(0), embed_vectors[j].unsqueeze(0)
                     sims.append(nn.CosineSimilarity()(vector_i, vector_j).cpu().item())
 
-            
             with torch.no_grad():
                 _, S, _ = torch.linalg.svd(embed_vectors)
                 # first principal axis' explaind variance ratio
@@ -181,21 +181,27 @@ if __name__ == '__main__':
             # compute mean of cosine similarities of embedding vectors
             mu, var = np.mean(sims), np.var(sims)
             wandb_writer.log({
+                "epoch": epoch,
                 "embed_vector_mu": mu, 
                 "embed_vector_var": var, 
                 "1st_axis_exp_var": exp_var
             })
             
-            # 1. gradient contributions from each layer in each client (ratio of l2 distance in each layer w.r.t. sum of l2 distances)
-            # 2. average over multiple clients by layer
-            ratio_grads = get_length_gradients(local_weights_copy = copy.deepcopy(local_weights), global_model_copy = copy.deepcopy(global_model))
-            fig, ax = plt.subplots()
-            ax.plot(ratio_grads)
-            ax.set_ylabel("grad prop")
-            ax.set_xlabel("layer index")
-            wandb_writer.log({
-                f"grad_{epoch}": wandb.Image(fig)
-            })
+            if args.agg == "fedprox":
+                # for fedprox (l2 regularization)
+                # 1. gradient contributions from each layer in each client (ratio of l2 distance in each layer w.r.t. sum of l2 distances)
+                # 2. average over multiple clients by layer
+                ratio_grads = get_length_gradients(local_weights_copy = copy.deepcopy(local_weights), global_model_copy = copy.deepcopy(global_model))
+                fig, ax = plt.subplots()
+                ax.plot(ratio_grads)
+                ax.set_title("L2 gradient by layer")
+                ax.set_ylabel("grad prop")
+                ax.set_xlabel("layer index")
+                fig.tight_layout()
+
+                wandb_writer.log({
+                    f"grad_{epoch}": wandb.Image(fig)
+                })
             # aggregate weights
             global_weights = average_weights(local_weights)
             global_model.load_state_dict(global_weights)
@@ -249,7 +255,7 @@ if __name__ == '__main__':
         test_loader  = DataLoader(
             test_dataset, 
             batch_size=args.local_bs, 
-            shuffle=True, 
+            shuffle=False,  # important! 
             num_workers=4, 
             pin_memory=True, 
             drop_last = True
@@ -289,7 +295,8 @@ if __name__ == '__main__':
         wandb_writer.log({
             "test_loss_server": loss_avg, 
             "top1_server": top1_avg,
-            "top5_server": top5_avg 
+            "top5_server": top5_avg,
+            "epoch": epoch
         })
         
         ckpt_manager.save(loss_avg, top1_avg, global_model.state_dict(), args.ckpt_path)

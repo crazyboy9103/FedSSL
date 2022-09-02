@@ -1,0 +1,96 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.13.2 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220830_014043-20220830_014041
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run FLSL_noniid_bn_fedavg
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220830_014041
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+[W CudaIPCTypes.cpp:92] Producer process tried to deallocate over 1000 memory blocks referred by consumer processes. Deallocation might be significantly slowed down. We assume it will never going to be the case, but if it is, please file but to https://github.com/pytorch/pytorch
+Client 38 Linear evaluating FLSL model
+Client 43 Linear evaluating FLSL model
+Client 8 Linear evaluating FLSL model
+Client 95 Linear evaluating FLSL model
+Client 70 Linear evaluating FLSL model
+Client 38 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 32.53%
+                          test acc/top5 : 86.68%
+                          test loss : 1.83
+                          train loss : 0.35 
+                          time taken : 453.59 
+Client 47 Linear evaluating FLSL model
+Client 43 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 33.43%
+                          test acc/top5 : 88.02%
+                          test loss : 1.79
+                          train loss : 0.40 
+                          time taken : 460.49 
+Client 30 Linear evaluating FLSL model
+Client 86 Linear evaluating FLSL model
+Client 8 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.11%
+                          test acc/top5 : 86.18%
+                          test loss : 1.83
+                          train loss : 0.19 
+                          time taken : 468.10 
+Client 95 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.56%
+                          test acc/top5 : 86.98%
+                          test loss : 1.81
+                          train loss : 0.36 
+                          time taken : 452.09 
+Client 83 Linear evaluating FLSL model
+Client 32 Linear evaluating FLSL model
+Client 70 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.98%
+                          test acc/top5 : 86.16%
+                          test loss : 1.82
+                          train loss : 0.23 
+                          time taken : 461.26 
+Client 47 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.88%
+                          test acc/top5 : 85.52%
+                          test loss : 1.84
+                          train loss : 0.40 
+                          time taken : 468.11 
+Client 30 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 32.41%
+                          test acc/top5 : 86.22%
+                          test loss : 1.88
+                          train loss : 0.47 
+                          time taken : 490.92 
+Client 86 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 32.37%
+                          test acc/top5 : 86.50%
+                          test loss : 1.82
+                          train loss : 0.27 
+                          time taken : 496.13 
+Client 83 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.11%
+                          test acc/top5 : 84.70%
+                          test loss : 1.85
+                          train loss : 0.33 
+                          time taken : 495.28 
+Client 32 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.70%
+                          test acc/top5 : 87.68%
+                          test loss : 1.78
+                          train loss : 0.19 
+                          time taken : 491.27 
+slurmstepd: error: *** JOB 171619 ON b01 CANCELLED AT 2022-08-30T01:54:28 ***

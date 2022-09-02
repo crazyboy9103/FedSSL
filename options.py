@@ -125,7 +125,7 @@ def get_FLSL_opts(args, iid = False):
         args.alpha = 100000
 
     else:
-        args.alpha = 0.5
+        args.alpha = 0.1
 
     args.num_users = 100
     args.num_items = 300

@@ -1,0 +1,217 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.13.2 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20220830_014452-20220830_014450
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run simclr_iid_bn_fedavg
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20220830_014450
+Files already downloaded and verified
+Files already downloaded and verified
+
+ | Global Training Round : 1 |
+
+[W CudaIPCTypes.cpp:92] Producer process tried to deallocate over 1000 memory blocks referred by consumer processes. Deallocation might be significantly slowed down. We assume it will never going to be the case, but if it is, please file but to https://github.com/pytorch/pytorch
+Client 9 Linear evaluating simclr model
+Client 7 Linear evaluating simclr model
+Client 58 Linear evaluating simclr model
+Client 49 Linear evaluating simclr model
+Client 67 Linear evaluating simclr model
+Client 9 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.48%
+                          test acc/top5 : 80.73%
+                          test loss : 1.99
+                          train loss : 2.66 
+                          time taken : 202.25 
+Client 42 Linear evaluating simclr model
+Client 7 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 28.97%
+                          test acc/top5 : 83.49%
+                          test loss : 1.95
+                          train loss : 3.01 
+                          time taken : 203.34 
+Client 53 Linear evaluating simclr model
+Client 58 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 24.86%
+                          test acc/top5 : 83.67%
+                          test loss : 1.92
+                          train loss : 2.52 
+                          time taken : 205.98 
+Client 66 Linear evaluating simclr model
+Client 49 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 24.10%
+                          test acc/top5 : 81.05%
+                          test loss : 2.00
+                          train loss : 2.05 
+                          time taken : 205.78 
+Client 26 Linear evaluating simclr model
+Client 67 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.18%
+                          test acc/top5 : 80.77%
+                          test loss : 2.00
+                          train loss : 3.04 
+                          time taken : 206.93 
+Client 56 Linear evaluating simclr model
+Client 42 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 24.62%
+                          test acc/top5 : 81.57%
+                          test loss : 1.94
+                          train loss : 1.77 
+                          time taken : 209.87 
+Client 53 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.16%
+                          test acc/top5 : 80.77%
+                          test loss : 1.97
+                          train loss : 2.17 
+                          time taken : 210.01 
+Client 66 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 25.34%
+                          test acc/top5 : 80.23%
+                          test loss : 2.00
+                          train loss : 2.39 
+                          time taken : 211.37 
+Client 26 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 27.48%
+                          test acc/top5 : 83.01%
+                          test loss : 1.95
+                          train loss : 2.09 
+                          time taken : 210.01 
+Client 56 Epoch [5/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 27.60%
+                          test acc/top5 : 82.97%
+                          test loss : 1.94
+                          train loss : 2.71 
+                          time taken : 209.49 
+Client 9 Linear evaluating simclr model
+Client 7 Linear evaluating simclr model
+Client 58 Linear evaluating simclr model
+Client 49 Linear evaluating simclr model
+Client 67 Linear evaluating simclr model
+Client 9 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.04%
+                          test acc/top5 : 80.97%
+                          test loss : 1.99
+                          train loss : 1.44 
+                          time taken : 206.08 
+Training complete best top1/top5: 23.04%/80.97%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 42 Linear evaluating simclr model
+Client 7 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.86%
+                          test acc/top5 : 83.53%
+                          test loss : 1.96
+                          train loss : 1.15 
+                          time taken : 204.07 
+Training complete best top1/top5: 23.86%/83.53%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 53 Linear evaluating simclr model
+Client 58 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.00%
+                          test acc/top5 : 81.99%
+                          test loss : 2.01
+                          train loss : 1.59 
+                          time taken : 202.33 
+Training complete best top1/top5: 23.00%/81.99%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 49 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 25.78%
+                          test acc/top5 : 82.39%
+                          test loss : 2.00
+                          train loss : 1.25 
+                          time taken : 199.16 
+Training complete best top1/top5: 25.78%/82.39%
+Client 66 Linear evaluating simclr model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 26 Linear evaluating simclr model
+Client 67 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 24.40%
+                          test acc/top5 : 82.29%
+                          test loss : 1.90
+                          train loss : 1.42 
+                          time taken : 200.63 
+Training complete best top1/top5: 24.40%/82.29%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 56 Linear evaluating simclr model
+Client 42 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 23.82%
+                          test acc/top5 : 79.31%
+                          test loss : 2.00
+                          train loss : 0.90 
+                          time taken : 198.96 
+Training complete best top1/top5: 23.82%/79.31%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 53 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.00%
+                          test acc/top5 : 83.25%
+                          test loss : 1.98
+                          train loss : 1.22 
+                          time taken : 197.74 
+Training complete best top1/top5: 26.00%/83.25%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 66 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 24.38%
+                          test acc/top5 : 79.09%
+                          test loss : 2.04
+                          train loss : 1.45 
+                          time taken : 195.90 
+Training complete best top1/top5: 24.38%/79.09%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 26 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 26.02%
+                          test acc/top5 : 82.49%
+                          test loss : 1.97
+                          train loss : 1.43 
+                          time taken : 194.79 
+Training complete best top1/top5: 26.02%/82.49%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 56 Epoch [10/10]:
+                          learning rate : 0.001000
+                          test acc/top1 : 19.95%
+                          test acc/top5 : 81.49%
+                          test loss : 1.98
+                          train loss : 1.39 
+                          time taken : 193.87 
+Training complete best top1/top5: 19.95%/81.49%
+0 summary
+1 summary
+2 summary
+3 summary
+4 summary
+5 summary
+6 summary
+7 summary
+8 summary
+9 summary
+Client -1 Linear evaluating simclr model
+#######################################################
+ 
+Avg Validation Stats after 1 global rounds
+Validation Loss     : 1.93
+Validation Accuracy : top1/top5 24.10%/82.51%
+
+#######################################################
+model saved at ./checkpoints/simclr_iid_bn_fedavg.pth.tar
+
+ | Global Training Round : 2 |
+
+slurmstepd: error: *** JOB 171628 ON b02 CANCELLED AT 2022-08-30T01:54:28 ***
