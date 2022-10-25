@@ -10,8 +10,10 @@ import torch.nn as nn
 import os
 from torchvision import datasets, transforms
 from torchvision.transforms.functional import rotate
+from torch.utils.data import ConcatDataset
 import numpy as np
 import math
+from sklearn.manifold import TSNE
 
 class CudaCKA:
     def __init__(self, device):
@@ -55,42 +57,6 @@ class CudaCKA:
         var2 = torch.sqrt(self.kernel_HSIC(Y, Y, sigma))
         return hsic / (var1 * var2)
 
-# def evaluate_CKA_by_layer(local_weights_copy, global_model_copy):
-#     global_model_copy.set_mode("linear")
-
-#     noise = torch.rand(1, 3, 32, 32, device="cuda:0", requires_grad=False)
-#     def flatten(tensor):
-#         _, c, h, w = tensor.shape
-#         return tensor.squeeze(0).view(c, h * w)
-
-
-#     output_vectors = {}
-#     for client_id, weight in local_weights_copy.items():
-#         global_model_copy.load_state_dict(weight)
-#         outputs = []
-#         with torch.no_grad():
-#             out = global_model_copy.conv1(noise)
-#             out = global_model_copy.bn1(out)
-#             out = global_model_copy.relu(out)
-#             # head layer (conv1 + bn1 + relu + maxpool) output
-#             output_head = global_model_copy.maxpool(out)
-#             outputs.append(output_head.detach())
-
-#             layers = [global_model_copy.layer1, global_model_copy.layer2, global_model_copy.layer3, global_model_copy.layer4]
-#             out = output_head
-#             for layer in layers:
-#                 out = layer[0](out)
-#                 outputs.append(out.detach())
-#                 out = layer[1](out)
-#                 outputs.append(out.detach())
-
-#         outputs = list(map(lambda tensor: flatten(tensor),  outputs))
-#         output_vectors[client_id] = outputs
-    
-#     for i in range(len(output_vectors)):
-#         for j in range(i+1, len(output_vectors)):
-#             vec
-
 def get_length_gradients(local_weights_copy, global_model_copy):
     global_state_dict = copy.deepcopy(global_model_copy.state_dict())
 
@@ -102,25 +68,19 @@ def get_length_gradients(local_weights_copy, global_model_copy):
                 with torch.no_grad():
                     l2_norm = torch.linalg.norm(state_dict[key].cpu() - weight.cpu()).detach().item()
                     client_grad.append(l2_norm)
-                # print("l2norm", l2_norm)
-        # grad_sum = sum(client_grad)
-        # print(grad_sum)
-        # client_grad = [grad / grad_sum for grad in client_grad] # normalize
+                
         grads.append(client_grad)
-    # print(np.array(grads).shape)
+
     means = np.array(grads).T.mean(1).tolist()
-    # print("means", means)
     return means
 
-
 def feed_noise_to_models(local_weights_copy, global_model_copy, batch_size):
-    # global_model_copy.set_mode("linear")
-
     noise = torch.rand(batch_size, 3, 32, 32, device="cuda:0", requires_grad=False)
 
     out_vectors = None
     for client_id, weight in local_weights_copy.items():
         global_model_copy.load_state_dict(weight)
+        
         with torch.no_grad():
             out = global_model_copy.backbone(noise)
             if hasattr(global_model_copy, "projector"):
@@ -131,8 +91,47 @@ def feed_noise_to_models(local_weights_copy, global_model_copy, batch_size):
         
         else:
             out_vectors = torch.cat((out_vectors, out[0].unsqueeze(0)), dim=0)
-    # print(out_vectors.shape)
     return out_vectors
+
+def get_bn_stats(local_weights_copy, bn_stats):
+    bn_related_info = {}
+    with torch.no_grad():
+        # accumulate bn stats for all clients
+        for client_id, weight in local_weights_copy.items():
+            for key, value in weight.items():
+                if "bn" in key and (("running_mean" in key or "running_var" in key) or ("weight" in key or "bias" in key)):
+                    if key not in bn_related_info:
+                        bn_related_info[key] = value.unsqueeze(0).cpu()
+                    else:
+                        bn_related_info[key] = torch.cat([bn_related_info[key], value.unsqueeze(0).cpu()], dim=0)
+
+        # 
+        cos = nn.CosineSimilarity()
+        for key, value in bn_related_info.items():                   # [num_clients X vector_dim]
+            var, mean = torch.var_mean(value, dim=0)          # [1 X vector_dim] X 2
+            
+            cos_sims = cos(mean, value)
+
+            # l2_norms = torch.linalg.norm(value - mean, dim=1) # [num_clients X 1] l2 distance from mean vector
+
+            if key not in bn_stats:
+                bn_stats[key] = {
+                    # "mean": mean.unsqueeze(0),
+                    # "var": var.unsqueeze(0),
+                    "cos_mean": [cos_sims.mean().item()],
+                    "cos_var": [cos_sims.var().item()]
+                }
+            
+            else:
+                # bn_stats[key]["mean"] = torch.cat([bn_stats[key]["mean"], mean.unsqueeze(0)], dim=0)
+                # bn_stats[key]["var"] = torch.cat([bn_stats[key]["var"], var.unsqueeze(0)], dim=0)
+                bn_stats[key]["cos_mean"].append(cos_sims.mean().item())
+                bn_stats[key]["cos_var"].append(cos_sims.var().item())
+
+
+    
+def get_tsne(tensor):
+    return TSNE(n_components = 2).fit_transform(tensor.numpy()) if len(tensor) > 30 else TSNE(n_components = 2, perplexity = len(tensor) // 2).fit_transform(tensor.numpy())
 
 
 
@@ -166,8 +165,6 @@ def get_train_idxs(dataset, num_users, num_items, alpha):
     class_dist = (class_dist * num_items).astype(int)
     
     if num_users == 1:
-        class_dist = class_dist
-        
         for _class, class_num in enumerate(class_dist[0]):
             if class_num > len(idxs_labels[_class]):
                 class_dist[0][_class] = len(idxs_labels[_class])
@@ -179,7 +176,7 @@ def get_train_idxs(dataset, num_users, num_items, alpha):
     
     
     dict_users = {i: set() for i in range(num_users)}
-    dists = {i: [0 for j in range(10)] for i in range(num_users)}
+    dists = {i: [0 for _ in range(10)] for i in range(num_users)}
     
     for client_id, client_dist in enumerate(class_dist):
         for _class, num in enumerate(client_dist):
@@ -196,7 +193,9 @@ def get_train_idxs(dataset, num_users, num_items, alpha):
     for i, data_idxs in dict_users.items():
         dict_users[i] = list(data_idxs)
     
-    return dict_users
+    server_data_idx = {i: list(idxs) for i, idxs in idxs_labels.items()}
+
+    return dict_users, server_data_idx
 
 
 class SimCLRTransformWrapper(object):
@@ -212,38 +211,26 @@ def get_dataset(args):
     cifar_data_path = os.path.join(args.data_path, "cifar")
     mnist_data_path = os.path.join(args.data_path, "mnist")
     # transforms set according to https://github.com/guobbin/PFL-MoE/blob/master/main_fed.py
-    if args.exp in ["simclr", "simsiam"]:
-        s = args.strength
-        target_size = args.target_size
-        
-        color_jitter = transforms.ColorJitter(0.8 * s, 0.8 * s, 0.8 * s, 0.2 * s)
-        train_transforms = transforms.Compose([
-            #transforms.RandomResizedCrop(size=target_size),
-            transforms.RandomHorizontalFlip(),
-            transforms.RandomApply([color_jitter], p=0.8),
-            transforms.RandomGrayscale(p=0.2),
-            transforms.GaussianBlur(kernel_size=int(0.1 * target_size)),
-            transforms.ToTensor(),
-            transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
-        ])
-        
-        test_transforms = transforms.Compose([
-            #transforms.Resize(size=target_size), 
-            transforms.ToTensor(), 
-            transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
-        ])
-        
-    # Normal FL or centralized
-    elif args.exp in ["FLSL", "centralized"]:
-        train_transforms = transforms.Compose([
-            transforms.ToTensor(),
-            transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
-        ])
-        
-        test_transforms = transforms.Compose([
-            transforms.ToTensor(),
-            transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
-        ])
+    
+    s = args.strength
+    target_size = args.target_size
+    
+    color_jitter = transforms.ColorJitter(0.8 * s, 0.8 * s, 0.8 * s, 0.2 * s)
+    train_transforms = transforms.Compose([
+        #transforms.RandomResizedCrop(size=target_size),
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomApply([color_jitter], p=0.8),
+        transforms.RandomGrayscale(p=0.2),
+        transforms.GaussianBlur(kernel_size=int(0.1 * target_size)),
+        transforms.ToTensor(),
+        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
+    ])
+    
+    test_transforms = transforms.Compose([
+        #transforms.Resize(size=target_size), 
+        transforms.ToTensor(), 
+        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
+    ])
         
     
     if args.dataset == "cifar":
@@ -253,11 +240,16 @@ def get_dataset(args):
     elif args.dataset == "mnist":
         data = datasets.MNIST
         data_path = mnist_data_path
-        
+    
+    transform = train_transforms
+    if args.exp in ["simclr", "simsiam", "flcl"]:
+        transform = SimCLRTransformWrapper(train_transforms, args) 
+
+
     train_dataset = data(
         data_path, 
         train=True, 
-        transform=SimCLRTransformWrapper(train_transforms, args) if args.exp in ["simclr", "simsiam"] else train_transforms, 
+        transform=test_transforms, 
         download=True
     )
 
@@ -266,23 +258,24 @@ def get_dataset(args):
         train=False, 
         transform=test_transforms, 
         download=True
-    )  
+    )
+
         
-    user_train_idxs = get_train_idxs(
+    user_train_idxs, server_data_idx = get_train_idxs(
         train_dataset, 
         args.num_users, 
         args.num_items,
         args.alpha
     )
             
-    return train_dataset, test_dataset, user_train_idxs
+    return train_dataset, test_dataset, user_train_idxs, server_data_idx
 
 
 def average_weights(w):
     """
     Returns the average of the weights.
     """
-    w_avg = copy.deepcopy(w[0]) 
+    w_avg = copy.deepcopy(w[0])  # 0th always reside at 0th
     for key in w_avg.keys():
         for i in range(1, len(w)):
             if w_avg[key].get_device() != w[i][key].get_device():
@@ -330,65 +323,3 @@ class CheckpointManager():
             torch.save(save_dict, checkpoint_path)
 
         print(f"model saved at {checkpoint_path}")
-
-def exp_details(args, writer):
-    print('Experimental details:')
-    print(f'    Seed            : {args.seed}')
-    print(f'    Dataset         : {args.dataset}')
-    print(f'    Model           : {args.model}')
-    print(f'    Pretrained      : {args.pretrained}')
-    print(f'    Optimizer       : {args.optimizer}')
-    print(f'    Learning rate   : {args.lr}')
-    print(f'    Total Rounds    : {args.epochs}')
-    print(f'    Alpha           : {args.alpha}')
-    print(f'    Momentum        : {args.momentum}')
-    print(f'    Weight decay    : {args.weight_decay}')
-    print(f'    Sup Warmup      : {args.sup_warmup}')
-    print(f'    Server data frac: {args.server_data_frac}')
-    
-    if args.exp == "simclr":
-        print("SimCLR")
-        print(f'    Warmup          : {args.warmup}')
-        print(f'    Freeze          : {args.freeze}')
-        print(f'    Adapt Epochs    : {args.adapt_epoch}')
-        print(f'    Warmup Epochs   : {args.warmup_epochs}')
-        print(f'    Warmup Batchsize: {args.warmup_bs}')
-        print(f'    Temperature     : {args.temperature}')
-        print(f'    Output dim      : {args.out_dim}')
-        print(f'    N views         : {args.n_views}')
-
-
-    elif args.exp == "simsiam":
-        print("SimSiam")
-        print(f'    Warmup          : {args.warmup}')
-        print(f'    Freeze          : {args.freeze}')
-        print(f'    Adapt Epochs    : {args.adapt_epoch}')
-        print(f'    Warmup Epochs   : {args.warmup_epochs}')
-        print(f'    Warmup Batchsize: {args.warmup_bs}')
-        print(f'    Output dim      : {args.out_dim}')
-        print(f'    Pred   dim      : {args.pred_dim}')
-        
-
-    
-    elif args.exp == "FL":
-        print("FL")
-        print(f'    Warmup          : {args.warmup}')
-        print(f'    Freeze          : {args.freeze}')
-        print(f'    Adapt Epochs    : {args.adapt_epoch}')
-        print(f'    Warmup Epochs   : {args.warmup_epochs}')
-        print(f'    Warmup Batchsize: {args.warmup_bs}')
-        
-        
-        
-    print('Federated parameters:')
-    print(f'    Number of users                : {args.num_users}')
-    print(f'    Fraction of users              : {args.frac}')
-    print(f'    Number of train items per user : {args.num_items}')
-    print(f'    Local Batch size               : {args.local_bs}')
-    print(f'    Local Epochs                   : {args.local_ep}')
-    print(f'    Checkpoint path                : {args.ckpt_path}')
-    print(f'    Tensorboard log path           : {args.log_path}')
-
-    
-    
-    

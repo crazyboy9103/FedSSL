@@ -8,15 +8,6 @@ import torch
 import torch.nn.functional as F
 
 class ResNet_model(nn.Module):
-    def __str__(self):
-        return f"""
-            ResNet 
-                out_dim  : {self.args.out_dim}
-                pred_dim : {self.args.pred_dim}
-                num_classes: {self.args.num_classes}
-                model :  {self.args.model}
-                pretrained : {self.args.pretrained}
-        """
     def __init__(self, args):
         super(ResNet_model, self).__init__()
         self.args = args
@@ -94,8 +85,21 @@ class ResNet_model(nn.Module):
             )
             
             self.predictor = nn.Linear(out_dim, num_classes, bias=True)
+
+        # ADDED
+        # Loss is compared between dominant positive pairs  
+        elif self.exp == "flcl":
+            self.backbone.fc = nn.Sequential(
+                nn.Linear(in_features, out_dim, bias=True), 
+                nn.ReLU(inplace=True), 
+                nn.Linear(out_dim, out_dim, bias=True), 
+                nn.ReLU(inplace=True), 
+                nn.Linear(out_dim, out_dim, bias=True)
+            )
             
-            
+            self.predictor = nn.Linear(out_dim, num_classes, bias=True)
+
+
         elif self.exp in ["FLSL", "centralized"]:
             self.backbone.fc = nn.Identity()
             
@@ -103,13 +107,14 @@ class ResNet_model(nn.Module):
 
         elif self.exp == "fedmatch":
             pass
-            #self.backbone
+
+        elif self.exp == "fedorth":
+            pass
             
     def set_mode(self, mode):
         self.mode = mode
-        
-        # For linear evaluation, freeze or unfreeze backbone parameters 
         if mode == "linear":
+            bn_momentum = 0.1
             if self.freeze:
                 self.backbone.eval()
                 for param in self.backbone.parameters():
@@ -135,6 +140,7 @@ class ResNet_model(nn.Module):
             
         # For train, unfreeze backbone (and projector for simsiam)
         elif mode == "train":
+            bn_momentum = self.args.bn_stat_momentum
             self.backbone.train()
             for param in self.backbone.parameters():
                 param.requires_grad = True
@@ -145,6 +151,17 @@ class ResNet_model(nn.Module):
                 for param in self.projector.parameters():
                     param.requires_grad = True
         
+        self.backbone.bn1.momentum = bn_momentum 
+        layers = [self.backbone.layer1, self.backbone.layer2, self.backbone.layer3, self.backbone.layer4]
+        for i in range(len(layers)):
+            if i != 0:
+                layers[i][0].downsample[1].momentum = bn_momentum 
+            layers[i][0].bn1.momentum = bn_momentum 
+            layers[i][0].bn2.momentum = bn_momentum 
+            layers[i][1].bn1.momentum = bn_momentum 
+            layers[i][1].bn2.momentum = bn_momentum 
+        
+
         # Predictor should be always trainable
         self.predictor.train()
         for param in self.predictor.parameters():
@@ -164,7 +181,7 @@ class ResNet_model(nn.Module):
                 return self.predictor(self.backbone(x1))
         
         elif self.mode == "train":           
-            if self.exp == "simclr":
+            if self.exp == "simclr" or self.exp == "flcl":
                 return self.backbone(x1)
             
             elif self.exp == "simsiam":
@@ -176,6 +193,6 @@ class ResNet_model(nn.Module):
                 p2 = self.projector(z2)
         
                 return p1, p2, z1.detach(), z2.detach()
-        
+
             elif self.exp in ["FLSL", "centralized"]:
                 return self.predictor(self.backbone(x1))

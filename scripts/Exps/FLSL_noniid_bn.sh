@@ -1,25 +1,25 @@
 #!/bin/bash
 
-#SBATCH --job-name=FLSL_iid_bn_fedavg
+#SBATCH --job-name=avg_ni_0.01
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:4
 #SBATCH --time=0-12:00:00
 #SBATCH --mem=64000MB
 #SBATCH --partition=3090,titan
 #SBATCH --cpus-per-task=64
-#SBATCH --output=/home/kwangyeongill/FedSSL_clean/scripts/slurm/FLSL_iid_bn_fedavg_%j.out
+#SBATCH --output=/home/kwangyeongill/FedSSL_clean/scripts/slurm/fedavg_noniid_0.01_%j.out
 
 eval "$(conda shell.bash hook)"
 conda activate FedSSL
 
 exp="FLSL"
-dist="iid"
-iid="True"
+dist="noniid"
+iid="False"
 norm="bn"
 gn="False"
 agg="fedavg"
-
-wandb_tag="$exp"_"$dist"_"$norm"_"$agg"
+ema="0.01"
+wandb_tag="$agg"_"$dist"_"ema"_"$ema"
 ckpt_path=./checkpoints/"$exp"_"$dist"_"$norm"_"$agg".pth.tar
 cd /home/kwangyeongill/FedSSL_clean/ && python main.py \
                                         --parallel True \
@@ -28,4 +28,5 @@ cd /home/kwangyeongill/FedSSL_clean/ && python main.py \
                                         --iid $iid \
                                         --agg $agg \
                                         --wandb_tag $wandb_tag \
-                                        --ckpt_path $ckpt_path
+                                        --ckpt_path $ckpt_path \
+                                        --bn_stat_momentum $ema

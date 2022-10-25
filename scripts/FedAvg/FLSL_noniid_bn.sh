@@ -2,7 +2,7 @@
 
 #SBATCH --job-name=FLSL_noniid_bn_fedavg
 #SBATCH --nodes=1
-#SBATCH --gres=gpu:2
+#SBATCH --gres=gpu:4
 #SBATCH --time=0-12:00:00
 #SBATCH --mem=64000MB
 #SBATCH --partition=3090,titan

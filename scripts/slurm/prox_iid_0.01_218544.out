@@ -1,0 +1,336 @@
+wandb: Currently logged in as: crazyboy9103. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.13.4 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.13.1
+wandb: Run data is saved locally in /home/kwangyeongill/FedSSL_clean/wandb/run-20221025_215730-20221025_215727
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run prox_fedprox_iid_ema_0.01
+wandb: ⭐️ View project at https://wandb.ai/crazyboy9103/Fed
+wandb: 🚀 View run at https://wandb.ai/crazyboy9103/Fed/runs/20221025_215727
+Files already downloaded and verified
+Files already downloaded and verified
+[W CudaIPCTypes.cpp:92] Producer process tried to deallocate over 1000 memory blocks referred by consumer processes. Deallocation might be significantly slowed down. We assume it will never going to be the case, but if it is, please file but to https://github.com/pytorch/pytorch
+Client 9 Linear evaluating FLSL model
+Client 7 Linear evaluating FLSL model
+Client 58 Linear evaluating FLSL model
+Client 49 Linear evaluating FLSL model
+Client 67 Linear evaluating FLSL model
+Client 9 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.80%
+                          test acc/top5 : 88.40%
+                          test loss : 1.75
+                          train loss : 1.29 
+                          time taken : 262.93 
+Training complete best top1/top5: 36.80%/88.40%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 42 Linear evaluating FLSL model
+Client 7 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.12%
+                          test acc/top5 : 87.60%
+                          test loss : 1.75
+                          train loss : 1.38 
+                          time taken : 267.83 
+Training complete best top1/top5: 37.12%/87.60%
+Client 53 Linear evaluating FLSL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 58 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.92%
+                          test acc/top5 : 87.66%
+                          test loss : 1.82
+                          train loss : 1.11 
+                          time taken : 266.00 
+Training complete best top1/top5: 35.92%/87.66%
+Client 66 Linear evaluating FLSL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 49 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 31.29%
+                          test acc/top5 : 87.14%
+                          test loss : 1.84
+                          train loss : 1.33 
+                          time taken : 270.07 
+Training complete best top1/top5: 31.29%/87.14%
+Client 26 Linear evaluating FLSL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 67 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.36%
+                          test acc/top5 : 86.56%
+                          test loss : 1.79
+                          train loss : 1.23 
+                          time taken : 271.31 
+Training complete best top1/top5: 35.36%/86.56%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 56 Linear evaluating FLSL model
+Client 42 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.42%
+                          test acc/top5 : 86.80%
+                          test loss : 1.79
+                          train loss : 1.30 
+                          time taken : 270.73 
+Training complete best top1/top5: 34.42%/86.80%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 53 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.90%
+                          test acc/top5 : 87.98%
+                          test loss : 1.74
+                          train loss : 1.21 
+                          time taken : 270.26 
+Training complete best top1/top5: 37.90%/87.98%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 66 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.04%
+                          test acc/top5 : 88.74%
+                          test loss : 1.75
+                          train loss : 1.27 
+                          time taken : 266.21 
+Training complete best top1/top5: 36.04%/88.74%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 26 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.10%
+                          test acc/top5 : 86.00%
+                          test loss : 1.87
+                          train loss : 1.24 
+                          time taken : 265.48 
+Training complete best top1/top5: 35.10%/86.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 56 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.44%
+                          test acc/top5 : 86.78%
+                          test loss : 1.78
+                          train loss : 1.21 
+                          time taken : 268.63 
+Training complete best top1/top5: 35.44%/86.78%
+Client -1 Linear evaluating FLSL model
+#######################################################
+ 
+Avg Validation Stats after 1 global rounds
+Validation Loss     : 1.99
+Validation Accuracy : top1/top5 28.54%/79.10%
+
+#######################################################
+model saved at ./checkpoints/FLSL_iid_bn_fedprox.pth.tar
+Client 10 Linear evaluating FLSL model
+Client 11 Linear evaluating FLSL model
+Client 57 Linear evaluating FLSL model
+Client 27 Linear evaluating FLSL model
+Client 75 Linear evaluating FLSL model
+Client 10 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.50%
+                          test acc/top5 : 87.98%
+                          test loss : 1.75
+                          train loss : 0.91 
+                          time taken : 259.99 
+Training complete best top1/top5: 38.50%/87.98%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 93 Linear evaluating FLSL model
+Client 66 Linear evaluating FLSL model
+Client 11 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.40%
+                          test acc/top5 : 88.24%
+                          test loss : 1.71
+                          train loss : 0.99 
+                          time taken : 267.05 
+Training complete best top1/top5: 38.40%/88.24%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 57 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.06%
+                          test acc/top5 : 87.58%
+                          test loss : 1.74
+                          train loss : 0.80 
+                          time taken : 267.23 
+Training complete best top1/top5: 37.06%/87.58%
+Client 81 Linear evaluating FLSL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 27 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.02%
+                          test acc/top5 : 88.14%
+                          test loss : 1.76
+                          train loss : 1.04 
+                          time taken : 265.40 
+Training complete best top1/top5: 38.02%/88.14%
+Client 21 Linear evaluating FLSL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 75 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.10%
+                          test acc/top5 : 88.54%
+                          test loss : 1.72
+                          train loss : 0.88 
+                          time taken : 268.24 
+Training complete best top1/top5: 38.10%/88.54%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 3 Linear evaluating FLSL model
+Client 93 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.42%
+                          test acc/top5 : 87.38%
+                          test loss : 1.75
+                          train loss : 0.97 
+                          time taken : 267.38 
+Training complete best top1/top5: 37.42%/87.38%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 66 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 35.68%
+                          test acc/top5 : 87.86%
+                          test loss : 1.74
+                          train loss : 0.94 
+                          time taken : 268.83 
+Training complete best top1/top5: 35.68%/87.86%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 81 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.02%
+                          test acc/top5 : 88.26%
+                          test loss : 1.76
+                          train loss : 0.97 
+                          time taken : 268.37 
+Training complete best top1/top5: 36.02%/88.26%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 21 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 37.48%
+                          test acc/top5 : 88.40%
+                          test loss : 1.73
+                          train loss : 0.96 
+                          time taken : 267.54 
+Training complete best top1/top5: 37.48%/88.40%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 3 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.68%
+                          test acc/top5 : 88.04%
+                          test loss : 1.78
+                          train loss : 1.07 
+                          time taken : 269.94 
+Training complete best top1/top5: 36.68%/88.04%
+Client -1 Linear evaluating FLSL model
+#######################################################
+ 
+Avg Validation Stats after 2 global rounds
+Validation Loss     : 1.86
+Validation Accuracy : top1/top5 34.00%/85.25%
+
+#######################################################
+model saved at ./checkpoints/FLSL_iid_bn_fedprox.pth.tar
+Client 97 Linear evaluating FLSL model
+Client 27 Linear evaluating FLSL model
+Client 96 Linear evaluating FLSL model
+Client 81 Linear evaluating FLSL model
+Client 85 Linear evaluating FLSL model
+Client 29 Linear evaluating FLSL model
+Client 97 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 36.70%
+                          test acc/top5 : 87.22%
+                          test loss : 1.76
+                          train loss : 1.03 
+                          time taken : 260.57 
+Training complete best top1/top5: 36.70%/87.22%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 27 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.94%
+                          test acc/top5 : 89.36%
+                          test loss : 1.69
+                          train loss : 0.97 
+                          time taken : 261.67 
+Training complete best top1/top5: 38.94%/89.36%
+Client 74 Linear evaluating FLSL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 96 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.66%
+                          test acc/top5 : 88.56%
+                          test loss : 1.71
+                          train loss : 0.88 
+                          time taken : 259.76 
+Training complete best top1/top5: 38.66%/88.56%
+Client 11 Linear evaluating FLSL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 77 Linear evaluating FLSL model
+Client 81 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.48%
+                          test acc/top5 : 88.72%
+                          test loss : 1.68
+                          train loss : 0.81 
+                          time taken : 264.22 
+Training complete best top1/top5: 39.48%/88.72%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 85 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.42%
+                          test acc/top5 : 89.22%
+                          test loss : 1.69
+                          train loss : 0.88 
+                          time taken : 263.62 
+Training complete best top1/top5: 39.42%/89.22%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 8 Linear evaluating FLSL model
+Client 29 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.56%
+                          test acc/top5 : 88.90%
+                          test loss : 1.71
+                          train loss : 0.97 
+                          time taken : 265.90 
+Training complete best top1/top5: 38.56%/88.90%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 74 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.16%
+                          test acc/top5 : 88.68%
+                          test loss : 1.70
+                          train loss : 0.82 
+                          time taken : 265.83 
+Training complete best top1/top5: 38.16%/88.68%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 11 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.08%
+                          test acc/top5 : 88.20%
+                          test loss : 1.71
+                          train loss : 1.15 
+                          time taken : 265.55 
+Training complete best top1/top5: 39.08%/88.20%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 77 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 38.06%
+                          test acc/top5 : 87.80%
+                          test loss : 1.71
+                          train loss : 1.05 
+                          time taken : 262.61 
+Training complete best top1/top5: 38.06%/87.80%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 8 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 39.98%
+                          test acc/top5 : 89.00%
+                          test loss : 1.68
+                          train loss : 0.75 
+                          time taken : 263.72 
+Training complete best top1/top5: 39.98%/89.00%
+Client -1 Linear evaluating FLSL model
+#######################################################
+ 
+Avg Validation Stats after 3 global rounds
+Validation Loss     : 1.72
+Validation Accuracy : top1/top5 39.71%/87.76%
+
+#######################################################
+model saved at ./checkpoints/FLSL_iid_bn_fedprox.pth.tar

@@ -49,6 +49,9 @@ def args_parser():
     parser.add_argument('--freeze',           type=str2bool,  default=False,      help='freeze feature extractor during linear eval')
     parser.add_argument('--out_dim',          type=int,       default=512,       help="output dimension of the feature for simclr and simsiam")
     
+    # FedProx
+    parser.add_argument('--mu',             type=float,     default=0.01)
+
     # FL
     parser.add_argument("--num_users",      type=int,      default=10,        help="num users")
     parser.add_argument("--num_items",      type=int,      default=32,        help="num data each client holds")
@@ -62,9 +65,9 @@ def args_parser():
     parser.add_argument('--weight_decay',   type=float,    default=1e-4,       help='weight decay (default: 1e-4)')
     parser.add_argument('--dataset',        type=str,       default='cifar',  choices=["mnist", "cifar"],              help="mnist|cifar")
     parser.add_argument('--optimizer',      type=str,       default='adam',               help="type of optimizer")
-    
-    # FedProx
-    parser.add_argument('--mu',             type=float,     default=0.01)
+    parser.add_argument('--server_num_items', type=int,  default=1000,  help="number of items per class used for training at server")
+    parser.add_argument('--server_batch_size', type=int, default=32, help="server batch size for iid pre-training at server")
+    parser.add_argument('--bn_stat_momentum', type=float, default=0.01, help="bn stat EMA momentum should be set < 0.1")
 
     # Train setting
     parser.add_argument("--parallel",       type=str2bool,  default=True,                help="parallel training with threads")
@@ -100,8 +103,6 @@ def args_parser():
     elif args.exp == "simsiam":
         get_simsiam_opts(args, args.iid)
 
-    #############TODO My method#################
-
     return args
 
 def get_centralized_opts(args, iid = False):
@@ -131,11 +132,11 @@ def get_FLSL_opts(args, iid = False):
     args.num_items = 300
     args.epochs = 100
     args.frac = 0.1
-    args.local_ep = 10
+    args.local_ep = 5
     args.local_bs = 16
     # aggregate only 
     args.finetune = False
-    args.freeze = False
+    
 
 def get_simclr_opts(args, iid = False):
     if iid == True:
@@ -150,8 +151,11 @@ def get_simclr_opts(args, iid = False):
     args.local_ep = 10
     args.local_bs = 16
     # aggregate and train linear at server (finetune) 
+    args.freeze
     args.finetune = True
-    
+    # freeze backbone
+    args.freeze = True
+
 def get_simsiam_opts(args, iid = False):
     if iid == True:
         args.alpha = 100000
@@ -165,4 +169,5 @@ def get_simsiam_opts(args, iid = False):
     args.local_ep = 10
     args.local_bs = 16
     args.finetune = True
-
+    # freeze backbone
+    args.freeze = True

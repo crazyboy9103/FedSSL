@@ -30,7 +30,33 @@ class Trainer():
         self.FL_criterion = nn.CrossEntropyLoss().to(self.device)
         self.SimCLR_criterion = nn.CrossEntropyLoss(reduction="mean").to(self.device)
         self.SimSiam_criterion = nn.CosineSimilarity(dim=-1).to(self.device)
-
+        
+    def flcl_loss(self, features):
+        # features = (local batch size * 2, out_dim) shape 
+        feature1, feature2 = torch.tensor_split(features, 2, 0)
+        # feature1, 2 = (local batch size, out_dim) shape
+        feature1, feature2 = F.normalize(feature1, dim=1), F.normalize(feature2, dim=1)
+        batch_size = feature1.shape[0]
+        LARGE_NUM = 1e9
+        
+        # each example in feature1 (or 2) corresponds assigned to label in [0, batch_size) 
+        labels = torch.arange(0, batch_size, device=self.device, dtype=torch.int64)
+        masks = torch.eye(batch_size, device=self.device)
+        
+        
+        logits_aa = torch.matmul(feature1, feature1.T) / self.temperature #similarity matrix 
+        logits_aa = logits_aa - masks * LARGE_NUM
+        
+        logits_bb = torch.matmul(feature2, feature2.T) / self.temperature
+        logits_bb = logits_bb - masks * LARGE_NUM
+        
+        logits_ab = torch.matmul(feature1, feature2.T) / self.temperature
+        logits_ba = torch.matmul(feature2, feature1.T) / self.temperature
+        
+        loss_a = self.SimCLR_criterion(torch.cat([logits_ab, logits_aa], dim=1), labels)
+        loss_b = self.SimCLR_criterion(torch.cat([logits_ba, logits_bb], dim=1), labels)
+        loss = loss_a + loss_b
+        return loss
         
     def simsiam_loss(self, p1, p2, z1, z2):
         loss = -(self.SimSiam_criterion(p1, z2).mean() + self.SimSiam_criterion(p2, z1).mean()) * 0.5
@@ -63,19 +89,21 @@ class Trainer():
         loss = loss_a + loss_b
         return loss
     
-    def train(self, q=None):
+    def server_train(self, epochs=1):
         # change to train mode (requires_grad = False for backbone if freeze=True)
-        self.model.set_mode("train") 
+        self.model.set_mode("linear") 
 
-        # copy original model for fedprox regularization
-        global_model = copy.deepcopy(self.model)
+        
         optimizer = self.optim_dict[self.args.optimizer](
             filter(lambda p: p.requires_grad, self.model.parameters()),
             self.args.lr
         )
 
+        # copy original model for fedprox regularization
+        global_model = copy.deepcopy(self.model)
+        
         start = time.time()
-        for epoch in range(self.local_epochs):
+        for epoch in range(epochs):
             # Metric
             running_loss = AverageMeter("loss")
             
@@ -87,7 +115,14 @@ class Trainer():
                     labels = labels.to(self.device, non_blocking=True)
                     preds = self.model(images)
                     loss = self.FL_criterion(preds, labels)
+                
+                # TODO
+                elif self.exp == "flcl":
+                    images = torch.cat(images, dim=0)
+                    images = images.to(self.device, non_blocking=True)
+                    features = self.model(images)
                     
+
                 elif self.exp == "simclr":
                     images = torch.cat(images, dim=0)
                     images = images.to(self.device, non_blocking=True)
@@ -124,7 +159,110 @@ class Trainer():
             running_loss.reset()
 
             
-            lr = optimizer.param_groups[0]['lr']
+            
+
+            if (epoch + 1) == epochs:
+                # Finetune to test the client's performance
+                _, test_loss, test_top1, test_top5 = self.test(finetune=True, epochs=1)
+                
+                end = time.time()
+                time_taken = end-start
+                start = end
+                
+                lr = optimizer.param_groups[0]['lr']
+                print(f"""Client {self.client_id} Epoch [{epoch+1}/{epochs}]:
+                          learning rate : {lr:.6f}
+                          test acc/top1 : {test_top1:.2f}%
+                          test acc/top5 : {test_top5:.2f}%
+                          test loss : {test_loss:.2f}
+                          train loss : {avg_loss:.2f} 
+                          time taken : {time_taken:.2f} """)
+
+                
+                # Return evaluation metrics and original model parameters
+                state_dict = {
+                    "loss": test_loss, 
+                    "top1": test_top1, 
+                    "top5": test_top5,
+                    "model": copy.deepcopy(self.model.state_dict()), 
+                    "train_loss" : avg_loss
+                }
+               
+
+        print(f"Training complete best top1/top5: {test_top1:.2f}%/{test_top5:.2f}%")
+        return state_dict
+
+    def train(self, q=None):
+        # change to train mode (requires_grad = False for backbone if freeze=True)
+        self.model.set_mode("train") 
+
+        
+        optimizer = self.optim_dict[self.args.optimizer](
+            filter(lambda p: p.requires_grad, self.model.parameters()),
+            self.args.lr
+        )
+
+        # copy original model for fedprox regularization
+        global_model = copy.deepcopy(self.model)
+        
+        start = time.time()
+        for epoch in range(self.local_epochs):
+            # Metric
+            running_loss = AverageMeter("loss")
+            
+            for batch_idx, (images, labels) in enumerate(self.train_loader):
+                optimizer.zero_grad()
+            
+                if self.exp == "FLSL" or self.exp == "centralized":
+                    images = images.to(self.device, non_blocking=True)
+                    labels = labels.to(self.device, non_blocking=True)
+                    preds = self.model(images)
+                    loss = self.FL_criterion(preds, labels)
+                
+                # TODO
+                elif self.exp == "flcl":
+                    images = torch.cat(images, dim=0)
+                    images = images.to(self.device, non_blocking=True)
+                    features = self.model(images)
+                    
+
+                elif self.exp == "simclr":
+                    images = torch.cat(images, dim=0)
+                    images = images.to(self.device, non_blocking=True)
+                    features = self.model(images)
+                    loss = self.nce_loss(features)
+                
+                elif self.exp == "simsiam":
+                    images[0] = images[0].to(self.device, non_blocking=True)
+                    images[1] = images[1].to(self.device, non_blocking=True)
+                    p1, p2, z1, z2 = self.model(images[0], images[1]) 
+                    loss = self.simsiam_loss(p1, p2, z1, z2)
+
+                if self.args.agg == "fedavg":
+                    pass
+                
+                elif self.args.agg == "fedprox":
+                    proximal_term = 0.0
+                    for w, w_t in zip(self.model.parameters(), global_model.parameters()):
+                        proximal_term += (w - w_t).norm(2)
+
+                    loss += (self.args.mu / 2) * proximal_term
+
+                elif self.args.agg == "fedmatch":
+                    pass
+
+                loss.backward()
+                optimizer.step()
+                
+                loss_value = loss.item()
+                running_loss.update(loss_value)
+            
+            # Train metrics
+            avg_loss = running_loss.get_result()
+            running_loss.reset()
+
+            
+            
 
             if (epoch + 1) % 5 == 0:
                 # Finetune to test the client's performance
@@ -134,6 +272,7 @@ class Trainer():
                 time_taken = end-start
                 start = end
                 
+                lr = optimizer.param_groups[0]['lr']
                 print(f"""Client {self.client_id} Epoch [{epoch+1}/{self.local_epochs}]:
                           learning rate : {lr:.6f}
                           test acc/top1 : {test_top1:.2f}%
