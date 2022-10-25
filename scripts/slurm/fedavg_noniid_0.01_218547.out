@@ -118,3 +118,47 @@ Validation Accuracy : top1/top5 14.73%/60.63%
 
 #######################################################
 model saved at ./checkpoints/FLSL_noniid_bn_fedavg.pth.tar
+Client 96 Linear evaluating FLSL model
+Client 67 Linear evaluating FLSL model
+Client 2 Linear evaluating FLSL model
+Client 64 Linear evaluating FLSL model
+Client 78 Linear evaluating FLSL model
+Client 89 Linear evaluating FLSL model
+Client 96 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 29.83%
+                          test acc/top5 : 86.40%
+                          test loss : 1.91
+                          train loss : 0.18 
+                          time taken : 267.38 
+Training complete best top1/top5: 29.83%/86.40%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 45 Linear evaluating FLSL model
+Client 67 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 34.84%
+                          test acc/top5 : 86.34%
+                          test loss : 1.85
+                          train loss : 0.29 
+                          time taken : 268.78 
+Training complete best top1/top5: 34.84%/86.34%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 2 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 33.89%
+                          test acc/top5 : 85.74%
+                          test loss : 1.83
+                          train loss : 0.44 
+                          time taken : 267.38 
+Training complete best top1/top5: 33.89%/85.74%
+Client 22 Linear evaluating FLSL model
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+Client 64 Epoch [5/5]:
+                          learning rate : 0.001000
+                          test acc/top1 : 32.79%
+                          test acc/top5 : 84.82%
+                          test loss : 1.89
+                          train loss : 0.16 
+                          time taken : 268.93 
+Training complete best top1/top5: 32.79%/84.82%
+Client 6 Linear evaluating FLSL model
